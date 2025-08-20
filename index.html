@@ -1,0 +1,533 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>The Herbarium</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="p2/img/naturecircle/favicon.ico">
+    <!-- All CSS Files -->
+    <!-- Bootstrap css -->
+    <link rel="stylesheet" href="../../maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <!-- Icon Font -->
+    <link rel="stylesheet" href="p2/css/font-awesome.min.css">
+    <link rel="stylesheet" href="p2/css/et-line.css">
+    <!-- Plugins css file -->
+    <link rel="stylesheet" href="p2/css/plugins.css">
+    <!-- Theme main style -->
+    <link rel="stylesheet" href="p2/style.css">
+    <!-- Responsive css -->
+    <link rel="stylesheet" href="p2/css/responsive.css">
+    <!-- Modernizr JS -->
+    <script src="p2/js/vendor/modernizr-2.8.3.min.js"></script>
+	
+	
+	<style type="text/css">
+        .buy-btn {
+            line-height: 41px;
+            height: 44px;
+            padding: 0 30px;
+        }
+        .header-section .buy-btn {
+            background: #fff;
+            color: #2c2c2c;
+        }
+        .buy-btn:hover, .buy-btn:focus, .header-section .buy-btn:hover, .header-section .buy-btn:focus, .hero-content a:hover, .hero-content a:focus {
+           background-color: #78A206;
+            border-color: #78A206;
+            color: #fff;
+        }
+        .stick.header-section .buy-btn {
+            border-color: #2c2c2c;
+            color: #2c2c2c;
+        }
+        .stick.header-section .buy-btn:hover {
+            border-color: #78A206;
+        }
+        .demo-item {box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);}
+        .demo-item .title {margin: 0; padding: 20px 0;}
+        .demo-item:hover .image {
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        .demo-item .image::after {background-color: #78A206;}
+        .demo-item .image i:hover {color: #78A206;}
+		.stick .buy-btn {border: 2px solid #78A206; color: #78A206;}
+		.single-feature .icon {color: #78A206; width: 50px;}
+        .single-feature .content h4 {line-height: 1;}
+		.footer-section {background-color: #444;}
+		.stick .buy-btn:hover {color: #fff;}
+		.demo-item .title a:hover {color: #78A206;}
+		.demo-item .title {text-transform: capitalize; font-weight: 500;}
+		.footer-section .buy-btn:hover {color: #78A206;}
+        .col-md-offset-4 {margin-left: 33.3333%;}
+        .col-md-offset-2 {margin-left: 16.66665%;}
+        .logo {padding: 0;}
+        .logo a, .stick .logo a {width: auto;}
+        .demo-item a {
+            position: relative;
+            overflow: hidden;
+        }
+        .demo-item span.new {
+            background-color: #df2121;
+            border: 0 none;
+            color: #fff;
+            display: block;
+            font-weight: bold;
+            left: -33px;
+            margin: 0;
+            padding: 9px 0 7px;
+            position: absolute;
+            text-align: center;
+            text-shadow: 1px 1px rgba(0, 0, 0, 0.24);
+            text-transform: uppercase;
+            top: 10px;
+            transform: rotate(-45deg);
+            width: 131px;
+            z-index: 1;
+            opacity: 1;
+        }
+        @media only screen and (max-width: 767px) {
+            .footer-section .buy-btn {
+                float: left !important;
+            }
+        }
+        @media only screen and (max-width: 479px) {
+            .logo a, .stick .logo a {
+                width: 140px;
+            }
+            .col-md-offset-4, .col-md-offset-2 {margin-left: 0;}
+            .buy-btn {padding: 3px 12px;}
+            .section-title h1 {font-size: 26px;}
+        } 
+        .section-title h1 {color: #2c2c37; font-size: 24px; font-weight: 700; text-transform: uppercase;}
+        .overlay::before {opacity: 0.8;}
+        span.separator {padding: 0 5px;}
+        .hero-content p {max-width: 835px;}
+        .also-like .demo-item .title {text-transform: inherit}
+        
+        /* Navbar Highlight Styles */
+        .header-section {
+            background: linear-gradient(135deg, #78A206, #5d7e05);
+            box-shadow: 0 4px 20px rgba(120, 162, 6, 0.3);
+            border-bottom: 3px solid #4a6404;
+            transition: all 0.3s ease;
+        }
+        
+        .header-section.sticker.stick {
+            background: rgba(120, 162, 6, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(120, 162, 6, 0.4);
+        }
+        
+        .header-section .logo a {
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .header-section .logo a:hover {
+            transform: scale(1.1);
+        }
+        
+        .header-section .buy-btn {
+            background: #fff;
+            color: #2c2c2c;
+            border: 2px solid #fff;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3); }
+            50% { box-shadow: 0 6px 20px rgba(255, 255, 255, 0.5); }
+            100% { box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3); }
+        }
+	</style>
+
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '../../www.googletagmanager.com/gtm5445.html?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5JCTSSF');</script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="../../www.googletagmanager.com/nsc3ec.html?id=GTM-5JCTSSF"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+<!-- Start Header Section -->
+<div class="header-section section sticker">
+    <div class="container">
+        <div class="row justify-content-between align-items-center">
+            <!-- Logo -->
+            <div class="logo float-left">
+                <a href="naturecircle/index.html"><img src="p2/img/naturecircle/logo.png" alt=""><img src="p2/img/naturecircle/logo-dark.png" alt="" class="sticky-logo"></a>
+            </div>
+            <!-- Logo -->
+            <div class="float-right">
+                <a class="buy-btn" target="_blank" href="../../themeforest.net/cart/configure_before_adding/230070395eef.html">Buy Naturecircle</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Header Section End -->
+
+<!-- Start Hero Section -->
+<div class="hero-section section overlay" style="background-image: url('p2/img/naturecircle/hero-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="hero-content text-center col-12">
+                <h1><strong>The Herbarium</strong> The Herbarium eCommerce </h1>
+                <p>20+ PAGES <span class="separator">+</span> 5 HOME PAGES <span class="separator">+</span> 7 SHOP PAGES <span class="separator">+</span> 6 BLOG PAGES <span class="separator">+</span> FULLY RESPONSIVE <span class="separator">+</span> SASS SUPPORTED</p>
+                <a class="buy-btn" href="#demo">View Demo</a>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!-- Hero Section End -->
+
+<!-- Start Demo Section -->
+<div id="demo" class="demo-section section pt-120 pb-70">
+    <div class="container">
+        <div class="section-style">
+            <div class="section-title col-xs-12 mb-50">
+                <h1>Homepage Layouts</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 col-12 mb-50">
+                <div class="demo-item">
+                    <a href="naturecircle/index.html" class="image"><img src="p2/img/naturecircle/demo/1.jpg" alt=""><i class="fa fa-long-arrow-right"></i></a>
+                    <h4 class="title"><a href="naturecircle/index.html">Home Page 1</a></h4>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-12 mb-50">
+                <div class="demo-item">
+                    <a href="naturecircle/index-2.html" class="image"><img src="p2/img/naturecircle/demo/2.jpg" alt=""><i class="fa fa-long-arrow-right"></i></a>
+                    <h4 class="title"><a href="naturecircle/index-2.html">Home Page 2</a></h4>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-12 mb-50">
+                <div class="demo-item">
+                    <a href="naturecircle/index-3.html" class="image"><img src="p2/img/naturecircle/demo/3.jpg" alt=""><i class="fa fa-long-arrow-right"></i></a>
+                    <h4 class="title"><a href="naturecircle/index-3.html">Home Page 3</a></h4>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-12 mb-50">
+                <div class="demo-item">
+                    <a href="naturecircle/index-4.html" class="image"><img src="p2/img/naturecircle/demo/4.jpg" alt=""><i class="fa fa-long-arrow-right"></i></a>
+                    <h4 class="title"><a href="naturecircle/index-4.html">Home Page 4</a></h4>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-12 mb-50">
+                <div class="demo-item">
+                    <a href="naturecircle/index-5.html" class="image"><img src="p2/img/naturecircle/demo/hm-5.jpg" alt=""><i class="fa fa-long-arrow-right"></i><span class="new">new</span></a>
+                    <h4 class="title"><a href="naturecircle/index-5.html">Home Page 5</a></h4>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-12 mb-50">
+                <div class="demo-item">
+                    <a href="naturecircle/index-6.html" class="image"><img src="p2/img/naturecircle/demo/hm-6.jpg" alt=""><i class="fa fa-long-arrow-right"></i><span class="new">new</span></a>
+                    <h4 class="title"><a href="naturecircle/index-6.html">Home Page 6</a></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Demo Section End -->
+<!-- Start Demo Section -->
+<div id="demo" class="demo-section section pt-120 pb-70 bg-gray">
+    <div class="container">
+        <div class="section-style">
+            <div class="section-title col-xs-12 mb-50">
+                <h1>Shop Layouts</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 col-12 mb-50">
+                <div class="demo-item">
+                    <a href="naturecircle/shop.html" class="image"><img src="p2/img/naturecircle/demo/5.jpg" alt=""><i class="fa fa-long-arrow-right"></i></a>
+                    <h4 class="title"><a href="naturecircle/shop.html">Shop Page</a></h4>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-12 mb-50">
+                <div class="demo-item">
+                    <a href="naturecircle/shop-full-width.html" class="image"><img src="p2/img/naturecircle/demo/6.jpg" alt=""><i class="fa fa-long-arrow-right"></i></a>
+                    <h4 class="title"><a href="naturecircle/shop-full-width.html">Shop Full Width</a></h4>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-12 mb-50">
+                <div class="demo-item">
+                    <a href="naturecircle/shop-right-sidebar.html" class="image"><img src="p2/img/naturecircle/demo/7.jpg" alt=""><i class="fa fa-long-arrow-right"></i></a>
+                    <h4 class="title"><a href="naturecircle/shop-right-sidebar.html">Shop Right Sidebar</a></h4>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-12 mb-50">
+                <div class="demo-item">
+                    <a href="naturecircle/product-details.html" class="image"><img src="p2/img/naturecircle/demo/11.jpg" alt=""><i class="fa fa-long-arrow-right"></i></a>
+                    <h4 class="title"><a href="naturecircle/product-details.html">Single Shop</a></h4>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-12 mb-50">
+                <div class="demo-item">
+                    <a href="naturecircle/cart.html" class="image"><img src="p2/img/naturecircle/demo/8.jpg" alt=""><i class="fa fa-long-arrow-right"></i></a>
+                    <h4 class="title"><a href="naturecircle/cart.html">Cart Page</a></h4>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-12 mb-50">
+                <div class="demo-item">
+                    <a href="naturecircle/checkout.html" class="image"><img src="p2/img/naturecircle/demo/9.jpg" alt=""><i class="fa fa-long-arrow-right"></i></a>
+                    <h4 class="title"><a href="naturecircle/checkout.html">Checkout Page</a></h4>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-12 mb-50 col-md-offset-4">
+                <div class="demo-item">
+                    <a href="naturecircle/wishlist.html" class="image"><img src="p2/img/naturecircle/demo/10.jpg" alt=""><i class="fa fa-long-arrow-right"></i></a>
+                    <h4 class="title"><a href="naturecircle/wishlist.html">Wishlist Page</a></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Demo Section End -->
+<!-- Start Demo Section -->
+<div id="demo" class="demo-section section pt-120 pb-70">
+    <div class="container">
+        <div class="section-style">
+            <div class="section-title col-xs-12 mb-50">
+                <h1>Other Layouts</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 col-12 mb-50">
+                <div class="demo-item">
+                    <a href="naturecircle/blog.html" class="image"><img src="p2/img/naturecircle/demo/12.jpg" alt=""><i class="fa fa-long-arrow-right"></i></a>
+                    <h4 class="title"><a href="naturecircle/blog.html">Blog Page</a></h4>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-12 mb-50">
+                <div class="demo-item">
+                    <a href="naturecircle/blog-2-column.html" class="image"><img src="p2/img/naturecircle/demo/13.jpg" alt=""><i class="fa fa-long-arrow-right"></i></a>
+                    <h4 class="title"><a href="naturecircle/blog-2-column.html">Blog 2 Column</a></h4>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-12 mb-50">
+                <div class="demo-item">
+                    <a href="naturecircle/blog-3-column.html" class="image"><img src="p2/img/naturecircle/demo/14.jpg" alt=""><i class="fa fa-long-arrow-right"></i></a>
+                    <h4 class="title"><a href="naturecircle/blog-3-column.html">Blog 3 Column</a></h4>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-12 mb-50">
+                <div class="demo-item">
+                    <a href="naturecircle/blog-left-sidebar.html" class="image"><img src="p2/img/naturecircle/demo/15.jpg" alt=""><i class="fa fa-long-arrow-right"></i></a>
+                    <h4 class="title"><a href="naturecircle/blog-left-sidebar.html">Blog Left Sidebar</a></h4>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-12 mb-50">
+                <div class="demo-item">
+                    <a href="naturecircle/blog-details.html" class="image"><img src="p2/img/naturecircle/demo/16.jpg" alt=""><i class="fa fa-long-arrow-right"></i></a>
+                    <h4 class="title"><a href="naturecircle/blog-details.html">Blog Details Page</a></h4>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-12 mb-50">
+                <div class="demo-item">
+                    <a href="naturecircle/blog-details-left-sidebar.html" class="image"><img src="p2/img/naturecircle/demo/17.jpg" alt=""><i class="fa fa-long-arrow-right"></i></a>
+                    <h4 class="title"><a href="naturecircle/blog-details-left-sidebar.html">Blog Details Left Sidebar</a></h4>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-md-offset-2 col-12 mb-50">
+                <div class="demo-item">
+                    <a href="naturecircle/contact.html" class="image"><img src="p2/img/naturecircle/demo/18.jpg" alt=""><i class="fa fa-long-arrow-right"></i></a>
+                    <h4 class="title"><a href="naturecircle/contact.html">Contact Page</a></h4>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 col-12 mb-50">
+                <div class="demo-item">
+                    <a href="naturecircle/404.html" class="image"><img src="p2/img/naturecircle/demo/19.jpg" alt=""><i class="fa fa-long-arrow-right"></i></a>
+                    <h4 class="title"><a href="naturecircle/404.html">404 Page</a></h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Demo Section End -->
+
+<!-- Start Hero Section -->
+<div class="feature-section section pt-150 pb-100 bg-gray">
+    <div class="container">
+        <div class="row">
+            <div class="section-title col-12 mb-50">
+                <h1>The Herbarium</h1>
+            </div>
+            
+            <div class="single-feature col-lg-4 col-md-6 col-12 mb-50">
+                <span class="icon float-left"><i class="icon-mobile"></i></span>
+                <div class="content fix">
+                    <h4>Responsive Design</h4>
+                    <p>Naturecircle is supper responsive & work perfectly in all devices.</p>
+                </div>
+            </div>
+            <div class="single-feature col-lg-4 col-md-6 col-12 mb-50">
+                <span class="icon float-left"><i class="icon-profile-male"></i></span>
+                <div class="content fix">
+                    <h4>User Friendly</h4>
+                    <p>Naturecircle easy to use for any technical & nontechnical People.</p>
+                </div>
+            </div>
+            <div class="single-feature col-lg-4 col-md-6 col-12 mb-50">
+                <span class="icon float-left"><i class="icon-beaker"></i></span>
+                <div class="content fix">
+                    <h4>Creative Design</h4>
+                    <p>It's comes with creative & smart design layout.</p>
+                </div>
+            </div>
+            <div class="single-feature col-lg-4 col-md-6 col-12 mb-50">
+                <span class="icon float-left"><i class="icon-puzzle"></i></span>
+                <div class="content fix">
+                    <h4>Icon Font</h4>
+                    <p>It's comes with most popular FontAwesome & Pe 7 stroke icon font.</p>
+                </div>
+            </div>
+            <div class="single-feature col-lg-4 col-md-6 col-12 mb-50">
+                <span class="icon float-left"><i class="icon-genius"></i></span>
+                <div class="content fix">
+                    <h4>Google Font</h4>
+                    <p>600 Google Fonts. You can change font for all elements easily.</p>
+                </div>
+            </div>
+            <div class="single-feature col-lg-4 col-md-6 col-12 mb-50">
+                <span class="icon float-left"><i class="icon-envelope"></i></span>
+                <div class="content fix">
+                    <h4>Ajax Contact Form</h4>
+                    <p>It comes with ajax contact form which makes messaging much more quicker.</p>
+                </div>
+            </div>
+            <div class="single-feature col-lg-4 col-md-6 col-12 mb-50">
+                <span class="icon float-left"><i class="icon-search"></i></span>
+                <div class="content fix">
+                    <h4>Clean Markup</h4>
+                    <p>We developed it followed by W3C Markup.</p>
+                </div>
+            </div>
+            <div class="single-feature col-lg-4 col-md-6 col-12 mb-50">
+                <span class="icon float-left"><i class="icon-upload"></i></span>
+                <div class="content fix">
+                    <h4>Free Updates</h4>
+                    <p>Purchase once & get life-time free updates.</p>
+                </div>
+            </div>
+            <div class="single-feature col-lg-4 col-md-6 col-12 mb-50">
+                <span class="icon float-left"><i class="icon-megaphone"></i></span>
+                <div class="content fix">
+                    <h4>Real Support</h4>
+                    <p>We provide 7 days a week one by one real support.</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!-- Hero Section End -->
+
+
+<!-- Start Demo Section -->
+<div class="demo-section also-like section pt-120 pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="section-title col-12 mb-50">
+                <h1>You May Also Like our Another HTML</h1>
+            </div>            
+            <div class="col-md-4 col-sm-6 col-12 mb-50">
+                <div class="demo-item">
+                    <a href="../../themeforest.net/item/artfurniture-furniture-ecommerce-template/21512463273f.html?s_rank=3" class="image"><img src="../../s3.envato.com/files/242354736/01_preview_image_artfurniture.__large_preview.png" alt=""><i class="fa fa-long-arrow-right"></i></a>
+                    <h4 class="title"><a href="../../themeforest.net/item/artfurniture-furniture-ecommerce-template/21512463273f.html?s_rank=3">ArtFurniture - eCommerce Template</a></h4>
+                </div>
+            </div>  
+            <div class="col-md-4 col-sm-6 col-12 mb-50">
+                <div class="demo-item">
+                    <a href="../../themeforest.net/item/nego-fashion-ecommerce-bootstrap-4-template/224030208935.html?s_rank=2" class="image"><img src="../../s3.envato.com/files/251944404/01_preview_image_nego.__large_preview.png" alt=""><i class="fa fa-long-arrow-right"></i></a>
+                    <h4 class="title"><a href="../../themeforest.net/item/nego-fashion-ecommerce-bootstrap-4-template/224030208935.html?s_rank=2">Nego - Fashion eCommerce Template</a></h4>
+                </div>
+            </div> 
+            <div class="col-md-4 col-sm-6 col-12 mb-50">
+                <div class="demo-item">
+                    <a href="../../themeforest.net/item/furnish-minimalist-furniture-template/2085489920de.html?ref=AslamHasib" class="image"><img src="../../s3.envato.com/files/235648322/preview.__large_preview.jpg" alt=""><i class="fa fa-long-arrow-right"></i></a>
+                    <h4 class="title"><a href="../../themeforest.net/item/furnish-minimalist-furniture-template/2085489920de.html?ref=AslamHasib">Furnish - Minimalist Furniture Template </a></h4>
+                </div>
+            </div>     
+        </div>
+    </div>
+</div>
+<!-- Demo Section End -->
+
+<!-- Start Demo Section -->
+<div class="demo-section also-like section pt-120 pb-70 bg-gray">
+    <div class="container">
+        <div class="row">
+            <div class="section-title col-12 mb-50">
+                <h1>You May Also Like our Another wordpress</h1>
+            </div>            
+            <div class="col-md-4 col-sm-6 col-12 mb-50">
+                <div class="demo-item">
+                    <a href="../../themeforest.net/item/gonjjo-minimal-woocommerce-theme/2081738420de.html?ref=AslamHasib" class="image"><img src="../../s3.envato.com/files/237139625/Preview.__large_preview.png" alt=""><i class="fa fa-long-arrow-right"></i></a>
+                    <h4 class="title"><a href="../../themeforest.net/item/gonjjo-minimal-woocommerce-theme/2081738420de.html?ref=AslamHasib">Gonjjo - Minimal WooCommerce Theme </a></h4>
+                </div>
+            </div>  
+            <div class="col-md-4 col-sm-6 col-12 mb-50">
+                <div class="demo-item">
+                    <a href="../../themeforest.net/item/haat-minimalist-woocommerce-wordpress-theme/2080044620de.html?ref=AslamHasib" class="image"><img src="../../s3.envato.com/files/238844904/preview.__large_preview.png" alt=""><i class="fa fa-long-arrow-right"></i></a>
+                    <h4 class="title"><a href="../../themeforest.net/item/haat-minimalist-woocommerce-wordpress-theme/2080044620de.html?ref=AslamHasib">Haat - Minimalist WooCommerce Theme </a></h4>
+                </div>
+            </div>  
+            <div class="col-md-4 col-sm-6 col-12 mb-50">
+                <div class="demo-item">
+                    <a href="../../themeforest.net/item/latest-woocommerce-wordpress-theme/2070674020de.html?ref=AslamHasib" class="image"><img src="../../s3.envato.com/files/236854570/preview.__large_preview.png" alt=""><i class="fa fa-long-arrow-right"></i></a>
+                    <h4 class="title"><a href="../../themeforest.net/item/latest-woocommerce-wordpress-theme/2070674020de.html?ref=AslamHasib">Lunacy - WooCommerce Theme </a></h4>
+                </div>
+            </div>   
+        </div>
+    </div>
+</div>
+<!-- Demo Section End -->
+
+
+<div class="footer-section section pt-65 pb-50">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>Make your website come to life quickly.</h1>
+                <a class="buy-btn float-right" target="_blank" href="../../themeforest.net/cart/configure_before_adding/230070395eef.html">Buy Naturecircle</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Placed JS at the end of the document so the pages load faster -->
+<!-- jQuery latest version -->
+<script src="p2/js/vendor/jquery-3.1.1.min.js"></script>
+<!-- Bootstrap js -->
+<script src="../../cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="../../maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<!-- Plugins js -->
+<script src="p2/js/plugins.js"></script>
+<!-- Ajax Mail js -->
+<script src="p2/js/ajax-mail.js"></script>
+<!-- Main js -->
+<script src="p2/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1332 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Contact Us - The Herbarium | Natural Betauty & Wellness</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+        <!-- All css here -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/ie7.css">
+        <link rel="stylesheet" href="assets/css/plugins.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <script src="assets/js/vendor/modernizr-3.5.0.min.js"></script>
+        
+        <!-- Contact Page Enhanced Styles -->
+        <style>
+        /* Animation Classes */
+        .animate-fadeInUp {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+        .animate-slideInLeft {
+            animation: slideInLeft 1s ease-out forwards;
+        }
+        .animate-slideInRight {
+            animation: slideInRight 1s ease-out forwards;
+        }
+        .animate-slideInUp {
+            animation: slideInUp 0.8s ease-out forwards;
+        }
+        .animate-bounce {
+            animation: bounce 2s ease-in-out infinite;
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        .animate-pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        .animate-typewriter {
+            animation: typewriter 2s steps(40) forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+        .delay-5 { animation-delay: 1s; }
+        
+        /* Quick Enhancement Styles */
+        .enhanced-contact-area {
+            background: linear-gradient(135deg, #f8fbf4 0%, #ffffff 50%, #f0f8e8 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-main-title {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #78a206 0%, #2c5f05 50%, #78a206 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+        }
+        
+        .floating-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #78a206, #5d7d05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+            box-shadow: 0 10px 30px rgba(120, 162, 6, 0.3);
+            margin: 0 auto;
+        }
+        
+        .modern-contact-form {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .form-header {
+            text-align: center;
+            margin-bottom: 30px;
+            flex-shrink: 0;
+        }
+        
+        .enchanted-form {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            flex: 1;
+            position: relative;
+        }
+        
+        .form-submit {
+            text-align: center;
+            margin-top: auto;
+            padding-top: 20px;
+        }
+        
+        .contact-info-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: auto;
+            min-height: 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .contact-info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .contact-info-card .card-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .contact-info-card .card-content h4 {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .contact-info-card .card-content p {
+            margin-bottom: 8px;
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+        
+        .contact-info-card .card-content small {
+            color: #888;
+            font-size: 0.85rem;
+            font-style: italic;
+            margin-top: auto;
+        }
+        
+        /* Ensure working hours card doesn't get too tall */
+        .working-hours-card {
+            min-height: auto;
+        }
+        
+        .working-hours-card .card-content {
+            justify-content: flex-start;
+        }
+        
+        .magical-submit-btn {
+            background: linear-gradient(135deg, #78a206 0%, #5d7d05 100%);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(120, 162, 6, 0.3);
+            min-width: 200px;
+        }
+        
+        .magical-submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(120, 162, 6, 0.4);
+        }
+        
+        /* Animation Keyframes */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 53%, 80%, 100% { transform: translateY(0); }
+            40%, 43% { transform: translateY(-10px); }
+            70% { transform: translateY(-5px); }
+            90% { transform: translateY(-2px); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        @keyframes typewriter {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        
+        /* Form Styling */
+        .enchanted-form input,
+        .enchanted-form textarea {
+            width: 100%;
+            padding: 18px 20px 18px 55px;
+            border: 2px solid rgba(120, 162, 6, 0.2);
+            background: rgba(248, 251, 244, 0.8);
+            border-radius: 15px;
+            font-size: 16px;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+        
+        .enchanted-form input:focus,
+        .enchanted-form textarea:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.95);
+            border-color: #78a206;
+            box-shadow: 0 5px 20px rgba(120, 162, 6, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .input-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #78a206;
+            font-size: 18px;
+            z-index: 3;
+        }
+        
+        .card-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .address-icon { background: linear-gradient(135deg, #ff6b6b, #ff5252); }
+        .phone-icon { background: linear-gradient(135deg, #4ecdc4, #26a69a); }
+        .email-icon { background: linear-gradient(135deg, #45b7d1, #2196f3); }
+        .hours-icon { background: linear-gradient(135deg, #f39c12, #e67e22); }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .social-link:hover {
+            transform: translateY(-3px) scale(1.05);
+            text-decoration: none;
+            color: white;
+        }
+        
+        .social-link.facebook { background: linear-gradient(135deg, #3b5998, #2d4373); }
+        .social-link.instagram { background: linear-gradient(135deg, #e4405f, #c13584); }
+        .social-link.twitter { background: linear-gradient(135deg, #1da1f2, #0d95e8); }
+        .social-link.youtube { background: linear-gradient(135deg, #ff0000, #cc0000); }
+        
+        .map-section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-info-modern {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .contact-cards-only {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 15px;
+        }
+        
+        .social-connect {
+            text-align: center;
+            margin-top: 25px;
+            padding: 20px;
+            background: rgba(120, 162, 6, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            flex-shrink: 0;
+        }
+        
+        .social-connect h4 {
+            margin-bottom: 15px;
+            color: #2c5f05;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .info-header {
+            text-align: center;
+            margin-bottom: 30px;
+            flex-shrink: 0;
+        }
+        
+        .contact-cards {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .social-connect {
+            text-align: center;
+            margin-top: 30px;
+            padding: 25px;
+            background: rgba(120, 162, 6, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            flex-shrink: 0;
+        }
+        
+        .form-icon, .info-icon, .map-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #78a206, #5d7d05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            margin: 0 auto 20px;
+            box-shadow: 0 8px 25px rgba(120, 162, 6, 0.3);
+        }
+        
+        .hour-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(120, 162, 6, 0.2);
+            font-size: 0.95rem;
+        }
+        
+        .hour-item:last-child { border-bottom: none; }
+        .hour-item span:first-child { font-weight: 600; color: #2c5f05; }
+        .hour-item span:last-child { color: #666; }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .contact-main-title { font-size: 2rem; }
+            .modern-contact-form, .map-section { padding: 25px; }
+            .floating-icon { width: 60px; height: 60px; font-size: 24px; }
+        }
+
+        /* Custom Footer Styles */
+        .custom-footer {
+            background: linear-gradient(135deg, #2c5f05 0%, #1a3d03 50%, #0f2001 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .custom-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20" fill="none"><path d="M0,10 Q25,0 50,10 T100,10 V20 H0 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: 200px 50px;
+            background-repeat: repeat-x;
+            animation: wave 10s linear infinite;
+            opacity: 0.5;
+        }
+
+        @keyframes wave {
+            0% { background-position: 0 0; }
+            100% { background-position: 200px 0; }
+        }
+
+        .footer-main {
+            padding: 60px 0 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-brand {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .footer-brand img {
+            max-height: 60px;
+            filter: brightness(2);
+            margin-bottom: 20px;
+        }
+
+        .footer-brand h3 {
+            color: #78a206;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            color: #78a206;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-section h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(135deg, #78a206, #5d7d05);
+            border-radius: 2px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links li:hover {
+            transform: translateX(5px);
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #78a206;
+            text-decoration: none;
+        }
+
+        .footer-links a i {
+            margin-right: 10px;
+            width: 16px;
+            text-align: center;
+        }
+
+        .contact-info-footer {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-item-footer {
+            display: flex;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+        }
+
+        .contact-item-footer i {
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #78a206, #5d7d05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-size: 12px;
+            flex-shrink: 0;
+        }
+
+        .newsletter-footer {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .newsletter-footer h4 {
+            color: white;
+            margin-bottom: 15px;
+        }
+
+        .newsletter-footer p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        .newsletter-form-footer {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .newsletter-form-footer input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 25px;
+            color: white;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form-footer input:focus {
+            outline: none;
+            border-color: #78a206;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .newsletter-form-footer input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .newsletter-btn {
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #78a206, #5d7d05);
+            border: none;
+            border-radius: 25px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .newsletter-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(120, 162, 6, 0.4);
+        }
+
+        .social-footer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .social-footer a {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .social-footer a:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            color: white;
+        }
+
+        .social-footer a.facebook:hover { background: #3b5998; border-color: #3b5998; }
+        .social-footer a.instagram:hover { background: linear-gradient(135deg, #e4405f, #c13584); border-color: #e4405f; }
+        .social-footer a.twitter:hover { background: #1da1f2; border-color: #1da1f2; }
+        .social-footer a.youtube:hover { background: #ff0000; border-color: #ff0000; }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 25px 0;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+            font-size: 0.9rem;
+        }
+
+        .footer-bottom a {
+            color: #78a206;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer-bottom a:hover {
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .newsletter-form-footer {
+                flex-direction: column;
+            }
+            
+            .footer-main {
+                padding: 40px 0 20px;
+            }
+        }
+        </style>
+    </head>
+    <body>
+        
+        <!-- Header Area Start -->
+        <header class="header-area header-sticky">
+            <div class="header-container">
+                <div class="row">
+                    <div class="col-lg-5 display-none-md display-none-xs">
+                        <div class="ht-main-menu">
+                            <nav>
+                                <ul>
+                                    <li class="active"><a href="index.html">home <i class="fa fa-angle-down"></i></a>
+                                        <ul>
+                                            <li><a href="index.html">Home One</a></li>
+                                            <li><a href="index-2.html">Home Two</a></li>
+                                            <li><a href="index-3.html">Home Three</a></li>
+                                            <li><a href="index-4.html">Home Four</a></li>
+                                            <li><a href="index-5.html">Home Five</a></li>
+                                            <li><a href="index-6.html">Home Six</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="shop.html">vegetables <i class="fa fa-angle-down"></i></a>
+                                        <ul class="ht-mega-menu">
+                                            <li>
+                                                <ul>
+                                                    <li class="mega-menu-title">Bags</li>
+                                                    <li><a href="shop.html">Crochet</a></li>
+                                                    <li><a href="shop.html">Sleeveles</a></li>
+                                                    <li><a href="shop.html">Stripes</a></li>
+                                                    <li><a href="shop.html">Sweaters</a></li>
+                                                    <li><a href="shop.html"><img src="assets/img/banner/menu-1.jpg" alt=""></a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <ul>
+                                                    <li class="mega-menu-title">Bottoms</li>
+                                                    <li><a href="shop.html">Flat sandals</a></li>
+                                                    <li><a href="shop.html">Heeled sandals</a></li>
+                                                    <li><a href="shop.html">Polo Short Sleeve</a></li>
+                                                    <li><a href="shop.html">Short Sleeve</a></li>
+                                                    <li><a href="shop.html"><img src="assets/img/banner/menu-2.jpg" alt=""></a></li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                <ul>
+                                                    <li class="mega-menu-title">Shirts</li>
+                                                    <li><a href="shop.html">Flat sandals</a></li>
+                                                    <li><a href="shop.html">Heeled sandals</a></li>
+                                                    <li><a href="shop.html">Polo Short Sleeve</a></li>
+                                                    <li><a href="shop.html">Short Sleeve</a></li>
+                                                    <li><a href="shop.html"><img src="assets/img/banner/menu-3.jpg" alt=""></a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="shop.html">Shop <i class="fa fa-angle-down"></i></a>
+                                        <ul>
+                                            <li><a href="shop-full-width.html">shop full Width</a></li>
+                                            <li><a href="shop-right-sidebar.html">shop Right Sidebar</a></li>
+                                            <li><a href="wishlist.html">Wishlist Page</a></li>
+                                            <li><a href="cart.html">cart Page</a></li>
+                                            <li><a href="checkout.html">checkout Page</a></li>
+                                            <li><a href="product-details.html">Single Shop</a></li>
+                                            <li><a href="my-account.html">My Account</a></li>
+                                            <li><a href="login-register.html">login / register </a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="blog.html">blog <i class="fa fa-angle-down"></i></a>
+                                        <ul>
+                                            <li><a href="blog-2-column.html">blog 2 column</a></li>
+                                            <li><a href="blog-3-column.html">blog 3 column</a></li>
+                                            <li><a href="blog-left-sidebar.html">blog Left Sidebar</a></li>
+                                            <li><a href="blog-details.html">blog details</a></li>
+                                            <li><a href="blog-details-left-sidebar.html">blog details left Sidebar</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="contact.html">contact</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-4">
+                        <div class="logo text-center">
+                            <a href="index.html"><img src="assets/img/logo/logo.png" alt="NatureCircle"></a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-sm-8">
+                        <div class="header-content d-flex justify-content-end">
+                            <div class="search-wrapper">
+                                <a href="#"><span class="icon icon-Search"></span></a>
+                                <form action="#" class="search-form">
+                                    <input type="text" placeholder="Search entire store here ...">
+                                    <button type="button">Search</button>
+                                </form>
+                            </div>
+                            <div class="settings-wrapper">
+                                <a href="#"><i class="icon icon-Settings"></i></a>
+                                <div class="settings-content">
+                                    <h4>My Account <i class="fa fa-angle-down"></i></h4>
+                                    <ul>
+                                        <li><a href="#" class="modal-view button" data-bs-toggle="modal"  data-bs-target="#register_box">Register</a></li>
+                                        <li><a href="#" class="modal-view button" data-bs-toggle="modal"  data-bs-target="#login_box">login</a></li>
+                                    </ul>
+                                    <h4>Currency: USD <i class="fa fa-angle-down"></i></h4>
+                                    <ul>
+                                        <li><a href="#">€ Euro</a></li>
+                                        <li><a href="#">£ Pound Sterling</a></li>
+                                        <li><a href="#">$ Us Dollar</a></li>
+                                    </ul>
+                                    <h4>Language: en-gb <i class="fa fa-angle-down"></i></h4>
+                                    <ul>
+                                        <li>
+                                            <a href="#"><img src="assets/img/icon/flag-1.png" alt="">English</a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><img src="assets/img/icon/flag-2.png" alt="">Germany</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="cart-wrapper">
+                                <a href="#">
+                                    <i class="icon icon-FullShoppingCart"></i>
+                                    <span>2</span>
+                                </a>
+                                <div class="cart-item-wrapper">
+                                    <div class="single-cart-item">
+                                        <div class="cart-img">
+                                            <a href="cart.html"><img src="assets/img/cart/1.jpg" alt=""></a>
+                                        </div>
+                                        <div class="cart-text-btn">
+                                            <div class="cart-text">
+                                                <h5><a href="cart.html">Fresh Fruit Juice</a></h5>
+                                                <span class="cart-qty">×1</span>
+                                                <span class="cart-price">$68.00</span>
+                                            </div>
+                                            <button type="button"><i class="fa fa-close"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="single-cart-item">
+                                        <div class="cart-img">
+                                            <a href="cart.html"><img src="assets/img/cart/2.jpg" alt=""></a>
+                                        </div>
+                                        <div class="cart-text-btn">
+                                            <div class="cart-text">
+                                                <h5><a href="cart.html">Fresh Vegetables</a></h5>
+                                                <span class="cart-qty">×1</span>
+                                                <span class="cart-price">$98.00</span>
+                                            </div>
+                                            <button type="button"><i class="fa fa-close"></i></button>
+                                        </div>
+                                    </div>
+                                    <div class="cart-price-total">
+                                        <div class="cart-price-info d-flex justify-content-between">
+                                            <span>Sub-Total :</span>
+                                            <span>$135.00</span>
+                                        </div>
+                                        <div class="cart-price-info d-flex justify-content-between">
+                                            <span>Eco Tax (-2.00) :</span>
+                                            <span>$4.00</span>
+                                        </div>
+                                        <div class="cart-price-info d-flex justify-content-between">
+                                            <span>VAT (20%) :</span>
+                                            <span>$27.00</span>
+                                        </div>
+                                        <div class="cart-price-info d-flex justify-content-between">
+                                            <span>Total :</span>
+                                            <span>$166.00</span>
+                                        </div>
+                                    </div>
+                                    <div class="cart-links">
+                                        <a href="cart.html">View cart</a>
+                                        <a href="checkout.html">Checkout</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Header Area End -->
+            <!-- Mobile Menu Area Start -->
+            <div class="mobile-menu-area">
+                <div class="mobile-menu container">
+                    <nav id="mobile-menu-active">
+                        <ul class="menu-overflow">
+                            <li><a href="index.html">HOME</a>
+                                <ul>
+                                    <li><a href="index.html">Home One</a></li>
+                                    <li><a href="index-2.html">Home Two</a></li>
+                                    <li><a href="index-3.html">Home Three</a></li>
+                                    <li><a href="index-4.html">Home Four</a></li>
+                                    <li><a href="index-5.html">Home Five</a></li>
+                                    <li><a href="index-6.html">Home Six</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="shop.html">Shop</a>
+                                <ul>
+                                    <li><a href="shop-full-width.html">shop full Width</a></li>
+                                    <li><a href="shop-right-sidebar.html">shop Right Sidebar</a></li>
+                                    <li><a href="wishlist.html">Wishlist Page</a></li>
+                                    <li><a href="cart.html">cart Page</a></li>
+                                    <li><a href="checkout.html">checkout Page</a></li>
+                                    <li><a href="product-details.html">Single Shop</a></li>
+                                    <li><a href="my-account.html">My Account</a></li>
+                                    <li><a href="login-register.html">login / register </a></li>
+                                </ul>
+                            </li>
+                            <li><a href="blog.html">Blog</a>
+                                <ul>
+                                    <li><a href="blog-2-column.html">blog 2 column</a></li>
+                                    <li><a href="blog-3-column.html">blog 3 column</a></li>
+                                    <li><a href="blog-left-sidebar.html">blog Left Sidebar</a></li>
+                                    <li><a href="blog-details.html">blog details</a></li>
+                                    <li><a href="blog-details-left-sidebar.html">blog details left Sidebar</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="404.html">404</a></li>
+                        </ul>
+                    </nav>							
+                </div>
+            </div>
+            <!-- Mobile Menu Area End -->
+            <!--Start of Login Form-->
+            <div class="modal fade" id="login_box" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fa fa-close"></i></span></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-pop-up-content">
+								<h2>Login to your account</h2>
+								<form action="#" method="post">
+									<div class="form-box">
+										<input type="text" placeholder="User Name" name="username">
+										<input type="password" placeholder="Password" name="pass">
+									</div>
+									<div class="checkobx-link">
+									    <div class="left-col">
+								            <input type="checkbox" id="remember_me"><label for="remember_me">Remember Me</label>
+									    </div>
+									    <div class="right-col"><a href="#">Forget Password?</a></div>
+									</div>
+								    <button type="submit">Sign In</button>
+								</form>
+							</div>
+                        </div>	
+                    </div>	
+                </div>
+            </div>
+            <!--End of Login Form-->
+            <!--Start of Register Form-->
+            <div class="modal fade" id="register_box" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fa fa-close"></i></span></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-pop-up-content">
+								<h2>Sign Up</h2>
+								<form action="#" method="post">
+									<div class="form-box">
+										<input type="text" placeholder="Full Name" name="fullname">
+										<input type="text" placeholder="User Name" name="username">
+										<input type="email" placeholder="Email" name="email">
+										<input type="password" placeholder="Password" name="pass">
+										<input type="password" placeholder="Confirm Password" name="re_pass">
+									</div>
+									<div class="checkobx-link">
+									    <div class="left-col">
+								            <input type="checkbox" id="remember_reg"><label for="remember_reg">Remember Me</label>
+									    </div>
+									</div>
+								    <button class="text-uppercase" type="submit">Register</button>
+								</form>
+							</div>
+                        </div>	
+                    </div>	
+                </div>
+            </div>
+            <!--End of Register Form-->
+        </header>
+        <!-- Header Area End -->
+        <!-- Breadcrumb Area Start -->
+        <div class="breadcrumb-area bg-12 text-center">
+            <div class="container">
+                <h1>Get In Touch</h1>
+                <nav aria-label="breadcrumb">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Contact</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- Breadcrumb Area End -->
+        <!-- Enhanced Contact Area Start -->
+        <div class="enhanced-contact-area pt-120 pb-120">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center mb-80">
+                        <div class="contact-intro animate-fadeInUp">
+                            <div class="contact-icon-wrapper">
+                                <div class="floating-icon animate-bounce">
+                                    <i class="fa fa-heart text-gradient"></i>
+                                </div>
+                            </div>
+                            <h2 class="contact-main-title animate-typewriter">Let's Connect & Create Magic Together</h2>
+                            <p class="contact-subtitle animate-fadeInUp delay-1">We'd love to hear from you! Share your thoughts, questions, or dreams with us.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row align-items-stretch">
+                    <!-- Contact Form Section -->
+                    <div class="col-lg-7 mb-5 d-flex">
+                        <div class="modern-contact-form animate-slideInLeft w-100">
+                            <div class="form-header">
+                                <div class="form-icon animate-float">
+                                    <i class="fa fa-paper-plane"></i>
+                                </div>
+                                <h3>Send us a Message</h3>
+                                <p>Fill out this lovely form and we'll get back to you as soon as possible!</p>
+                            </div>
+                            
+                            <form id="contact-form" action="https://htmldemo.net/naturecircle/naturecircle/mail.php" method="post" class="enchanted-form">
+                                <div class="form-row">
+                                    <div class="form-group animate-slideInUp">
+                                        <div class="input-wrapper">
+                                            <i class="fa fa-user input-icon"></i>
+                                            <input type="text" name="name" id="name" placeholder="Your Beautiful First Name" required>
+                                            <div class="input-border"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group animate-slideInUp delay-1">
+                                        <div class="input-wrapper">
+                                            <i class="fa fa-user input-icon"></i>
+                                            <input type="text" name="l_name" id="l_name" placeholder="Your Lovely Last Name" required>
+                                            <div class="input-border"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group animate-slideInUp delay-2">
+                                        <div class="input-wrapper">
+                                            <i class="fa fa-envelope input-icon"></i>
+                                            <input type="email" name="email" id="email" placeholder="your.email@example.com" required>
+                                            <div class="input-border"></div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group animate-slideInUp delay-3">
+                                        <div class="input-wrapper">
+                                            <i class="fa fa-tag input-icon"></i>
+                                            <input type="text" name="subject" id="subject" placeholder="What's this about?" required>
+                                            <div class="input-border"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group animate-slideInUp delay-4">
+                                    <div class="textarea-wrapper">
+                                        <i class="fa fa-comment input-icon"></i>
+                                        <textarea name="message" id="message" placeholder="Tell us your story, ask a question, or share your thoughts... We're all ears! 💚" rows="6" required></textarea>
+                                        <div class="input-border"></div>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-submit animate-slideInUp delay-5">
+                                    <button type="submit" class="magical-submit-btn">
+                                        <span class="btn-text">Send Message</span>
+                                        <span class="btn-icon">
+                                            <i class="fa fa-paper-plane"></i>
+                                        </span>
+                                        <div class="btn-particles">
+                                            <div class="particle"></div>
+                                            <div class="particle"></div>
+                                            <div class="particle"></div>
+                                        </div>
+                                    </button>
+                                </div>
+                                <p class="form-messege"></p>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Contact Information Section -->
+                    <div class="col-lg-5 mb-5 d-flex">
+                        <div class="contact-info-modern animate-slideInRight w-100">
+                            <div class="contact-cards-only">
+                                <!-- Address Card -->
+                                <div class="contact-info-card animate-slideInUp">
+                                    <div class="card-icon address-icon">
+                                        <i class="fa fa-home"></i>
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>Visit Our Beautiful Space</h4>
+                                        <p>Westlands, Nairobi<br>Nairobi, Kenya 00100</p>
+                                        <small>Come say hi! We'd love to meet you ✨</small>
+                                    </div>
+                                    <div class="card-glow address-glow"></div>
+                                </div>
+
+                                <!-- Phone Card -->
+                                <div class="contact-info-card animate-slideInUp delay-1">
+                                    <div class="card-icon phone-icon">
+                                        <i class="fa fa-phone"></i>
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>Give Us a Ring</h4>
+                                        <p>+254 (712) 345-678</p>
+                                        <small>Available Mon-Sat, 8AM - 10PM (EAT) 📞</small>
+                                    </div>
+                                    <div class="card-glow phone-glow"></div>
+                                </div>
+
+                                <!-- Email Card -->
+                                <div class="contact-info-card animate-slideInUp delay-2">
+                                    <div class="card-icon email-icon">
+                                        <i class="fa fa-envelope"></i>
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>Drop Us an Email</h4>
+                                        <p>hello@herbarium.com<br>support@herbarium.com</p>
+                                        <small>We'll respond within 24 hours 💌</small>
+                                    </div>
+                                    <div class="card-glow email-glow"></div>
+                                </div>
+
+                                <!-- Working Hours Card -->
+                                <div class="contact-info-card working-hours-card animate-slideInUp delay-3">
+                                    <div class="card-icon hours-icon">
+                                        <i class="fa fa-clock-o"></i>
+                                    </div>
+                                    <div class="card-content">
+                                        <h4>When We're Available</h4>
+                                        <div class="hours-list">
+                                            <div class="hour-item">
+                                                <span>Monday - Friday</span>
+                                                <span>8:00 AM - 6:00 PM</span>
+                                            </div>
+                                            <div class="hour-item">
+                                                <span>Saturday</span>
+                                                <span>9:00 AM - 4:00 PM</span>
+                                            </div>
+                                            <div class="hour-item">
+                                                <span>Sunday</span>
+                                                <span>Closed (Rest Day 😊)</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-glow hours-glow"></div>
+                                </div>
+                            </div>
+
+                            <!-- Social Media Links -->
+                            <div class="social-connect animate-fadeInUp delay-4">
+                                <h4>Follow Our Journey</h4>
+                                <div class="social-links">
+                                    <a href="#" class="social-link facebook animate-bounce delay-1">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                    <a href="#" class="social-link instagram animate-bounce delay-2">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                    <a href="#" class="social-link twitter animate-bounce delay-3">
+                                        <i class="fa fa-twitter"></i>
+                                    </a>
+                                    <a href="#" class="social-link youtube animate-bounce delay-4">
+                                        <i class="fa fa-youtube"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Section -->
+                <div class="row mt-80">
+                    <div class="col-12">
+                        <div class="map-section animate-fadeInUp">
+                            <div class="map-header text-center mb-40">
+                                <div class="map-icon animate-float">
+                                    <i class="fa fa-map"></i>
+                                </div>
+                                <h3>Find Us on the Map</h3>
+                                <p>Located in the heart of the city, easy to reach and hard to forget!</p>
+                            </div>
+                            <div class="enhanced-map-wrapper">
+                                <div id="googleMap" style="width:100%;height:450px;border-radius:20px;box-shadow:0 20px 40px rgba(0,0,0,0.1);"></div>
+                                <div class="map-overlay">
+                                    <div class="map-overlay-content">
+                                        <i class="fa fa-map-marker"></i>
+                                        <span>The Herbarium - Nairobi</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Enhanced Contact Area End -->
+        <!-- Custom Footer Start -->
+        <footer class="custom-footer">
+            <div class="footer-main">
+                <div class="container">
+                    <!-- Footer Brand Section -->
+                    <div class="footer-brand">
+                        <img src="assets/img/logo/logo.png" alt="The Herbarium">
+                        <h3>The Herbarium</h3>
+                        <p>Discover the beauty of nature with our premium organic products. We're dedicated to bringing you the finest natural ingredients for a healthier, more beautiful you.</p>
+                    </div>
+
+                    <!-- Footer Content Grid -->
+                    <div class="footer-content">
+                        <!-- Quick Links -->
+                        <div class="footer-section">
+                            <h4>Quick Links</h4>
+                            <ul class="footer-links">
+                                <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                                <li><a href="shop.html"><i class="fa fa-shopping-bag"></i> Shop Products</a></li>
+                                <li><a href="blog.html"><i class="fa fa-newspaper-o"></i> Our Blog</a></li>
+                                <li><a href="contact.html"><i class="fa fa-envelope"></i> Contact Us</a></li>
+                                <li><a href="my-account.html"><i class="fa fa-user"></i> My Account</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Categories -->
+                        <div class="footer-section">
+                            <h4>Categories</h4>
+                            <ul class="footer-links">
+                                <li><a href="shop.html"><i class="fa fa-leaf"></i> Natural Skincare</a></li>
+                                <li><a href="shop.html"><i class="fa fa-heart"></i> Wellness Products</a></li>
+                                <li><a href="shop.html"><i class="fa fa-star"></i> Best Sellers</a></li>
+                                <li><a href="shop.html"><i class="fa fa-gift"></i> Gift Sets</a></li>
+                                <li><a href="shop.html"><i class="fa fa-tags"></i> Special Offers</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Support -->
+                        <div class="footer-section">
+                            <h4>Customer Support</h4>
+                            <ul class="footer-links">
+                                <li><a href="#"><i class="fa fa-question-circle"></i> Help Center</a></li>
+                                <li><a href="#"><i class="fa fa-truck"></i> Shipping Info</a></li>
+                                <li><a href="#"><i class="fa fa-undo"></i> Returns & Refunds</a></li>
+                                <li><a href="#"><i class="fa fa-shield"></i> Privacy Policy</a></li>
+                                <li><a href="#"><i class="fa fa-file-text"></i> Terms of Service</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Contact Info -->
+                        <div class="footer-section">
+                            <h4>Get in Touch</h4>
+                            <div class="contact-info-footer">
+                                <div class="contact-item-footer">
+                                    <i class="fa fa-map-marker"></i>
+                                    <span>Westlands, Nairobi<br>Kenya 00100</span>
+                                </div>
+                                <div class="contact-item-footer">
+                                    <i class="fa fa-phone"></i>
+                                    <span>+254 (712) 345-678</span>
+                                </div>
+                                <div class="contact-item-footer">
+                                    <i class="fa fa-envelope"></i>
+                                    <span>hello@herbarium.com</span>
+                                </div>
+                                <div class="contact-item-footer">
+                                    <i class="fa fa-clock-o"></i>
+                                    <span>Mon-Sat: 8AM-10PM (EAT)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Newsletter Section -->
+                    <div class="newsletter-footer">
+                        <h4>🌿 Stay Connected with Nature</h4>
+                        <p>Subscribe to our newsletter for exclusive offers, natural beauty tips, and the latest product updates!</p>
+                        <form class="newsletter-form-footer" action="#" method="post">
+                            <input type="email" placeholder="Enter your email address..." required>
+                            <button type="submit" class="newsletter-btn">Subscribe</button>
+                        </form>
+                        
+                        <!-- Social Media Links -->
+                        <div class="social-footer">
+                            <a href="#" class="facebook" title="Follow us on Facebook">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a href="#" class="instagram" title="Follow us on Instagram">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                            <a href="#" class="twitter" title="Follow us on Twitter">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="#" class="youtube" title="Subscribe to our YouTube">
+                                <i class="fa fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="container">
+                    <p>&copy; 2025 <a href="#">The Herbarium</a>. All rights reserved. Made with 💚 for nature lovers.</p>
+                </div>
+            </div>
+        </footer>
+        <!-- Custom Footer End -->
+        
+        <!-- Map js -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClpvcUyl31wMd7DJZQnnzI006S99u9nnM"></script>
+        <script  src="https://www.google.com/jsapi"></script>
+        <script src="assets/map/map.js"></script>
+        <!-- All js here -->
+       <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/plugins.js"></script>
+        <script src="assets/js/ajax-mail.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+
+</html>
