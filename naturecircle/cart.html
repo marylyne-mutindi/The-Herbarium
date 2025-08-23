@@ -1,11 +1,10 @@
 <!doctype html>
 <html class="no-js" lang="en">
     
-<!-- Mirrored from htmldemo.net/naturecircle/naturecircle/cart.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Aug 2025 12:38:57 GMT -->
 <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title>Naturecircle - Premium eCommerce Template</title>
+        <title>Shopping Cart - The Herbarium | Natural Beauty & Wellness</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Favicon -->
@@ -18,9 +17,876 @@
         <link rel="stylesheet" href="assets/css/plugins.css">
         <link rel="stylesheet" href="assets/css/style.css">
         <script src="assets/js/vendor/modernizr-3.5.0.min.js"></script>
+        
+        <!-- Cart Page Enhanced Styles -->
+        <style>
+        /* Animation Classes */
+        .animate-fadeInUp {
+            animation: fadeInUp 1s ease-out forwards;
+        }
+        .animate-slideInLeft {
+            animation: slideInLeft 1s ease-out forwards;
+        }
+        .animate-slideInRight {
+            animation: slideInRight 1s ease-out forwards;
+        }
+        .animate-slideInUp {
+            animation: slideInUp 0.8s ease-out forwards;
+        }
+        .animate-bounce {
+            animation: bounce 2s ease-in-out infinite;
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        .animate-pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+        .delay-5 { animation-delay: 1s; }
+        .delay-6 { animation-delay: 1.2s; }
+        
+        /* Cart Page Styles */
+        .cart-main-area {
+            padding: 60px 0;
+            background: #f8f9fa;
+        }
+        
+        .cart-table-wrapper {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+        
+        .cart-table {
+            width: 100%;
+            margin: 0;
+        }
+        
+        .cart-table thead {
+            background: linear-gradient(135deg, #78a206, #5d7d05);
+            color: white;
+        }
+        
+        .cart-table thead th {
+            padding: 20px 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            font-size: 14px;
+        }
+        
+        .cart-table tbody td {
+            padding: 25px 15px;
+            border-bottom: 1px solid #e9ecef;
+            vertical-align: middle;
+        }
+        
+        .cart-table tbody tr:hover {
+            background: rgba(120, 162, 6, 0.05);
+        }
+        
+        .cart-product-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .cart-product-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 10px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        
+        .cart-product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .cart-product-details h5 {
+            margin: 0 0 5px 0;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .cart-product-details h5 a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .cart-product-details h5 a:hover {
+            color: #78a206;
+        }
+        
+        .product-attributes {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .cart-price {
+            font-weight: 700;
+            color: #78a206;
+            font-size: 18px;
+        }
+        
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            overflow: hidden;
+            width: fit-content;
+        }
+        
+        .qty-btn {
+            background: #f8f9fa;
+            border: none;
+            width: 35px;
+            height: 35px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .qty-btn:hover {
+            background: #78a206;
+            color: white;
+        }
+        
+        .qty-input {
+            border: none;
+            width: 50px;
+            height: 35px;
+            text-align: center;
+            font-weight: bold;
+            background: white;
+        }
+        
+        .cart-total-price {
+            font-weight: 700;
+            color: #333;
+            font-size: 18px;
+        }
+        
+        .remove-btn {
+            background: #dc3545;
+            color: white;
+            border: none;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .remove-btn:hover {
+            background: #c82333;
+            transform: scale(1.1);
+        }
+        
+        .cart-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+        
+        .cart-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .btn-cart {
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: 2px solid;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-continue {
+            background: transparent;
+            color: #78a206;
+            border-color: #78a206;
+        }
+        
+        .btn-continue:hover {
+            background: #78a206;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .btn-update {
+            background: #28a745;
+            color: white;
+            border-color: #28a745;
+        }
+        
+        .btn-update:hover {
+            background: #1e7e34;
+            border-color: #1e7e34;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .btn-clear {
+            background: #dc3545;
+            color: white;
+            border-color: #dc3545;
+        }
+        
+        .btn-clear:hover {
+            background: #c82333;
+            border-color: #c82333;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .cart-summary-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 40px;
+            align-items: start;
+        }
+        
+        .shipping-calculator {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .shipping-calculator h4 {
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .shipping-form .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .shipping-form label {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .shipping-form select,
+        .shipping-form input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .shipping-form select:focus,
+        .shipping-form input:focus {
+            outline: none;
+            border-color: #78a206;
+        }
+        
+        .cart-totals {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 20px;
+        }
+        
+        .cart-totals h4 {
+            color: #333;
+            margin-bottom: 25px;
+            font-weight: 600;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e9ecef;
+        }
+        
+        .totals-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid #f1f1f1;
+        }
+        
+        .totals-row:last-child {
+            border-bottom: none;
+            margin-top: 15px;
+            padding-top: 20px;
+            border-top: 2px solid #e9ecef;
+        }
+        
+        .totals-label {
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .totals-value {
+            font-weight: 600;
+            color: #78a206;
+        }
+        
+        .totals-row:last-child .totals-label {
+            font-size: 18px;
+            font-weight: 700;
+        }
+        
+        .totals-row:last-child .totals-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+        }
+        
+        .checkout-btn {
+            width: 100%;
+            padding: 15px 25px;
+            background: linear-gradient(135deg, #78a206, #5d7d05);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .checkout-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(120, 162, 6, 0.4);
+        }
+        
+        .empty-cart {
+            text-align: center;
+            padding: 80px 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .empty-cart-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            color: #6c757d;
+            font-size: 48px;
+        }
+        
+        .empty-cart h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .empty-cart p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        
+        .coupon-section {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+        
+        .coupon-form {
+            display: flex;
+            gap: 15px;
+            align-items: end;
+        }
+        
+        .coupon-input {
+            flex: 1;
+        }
+        
+        .coupon-input label {
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+            display: block;
+        }
+        
+        .coupon-input input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 8px;
+            transition: border-color 0.3s ease;
+        }
+        
+        .coupon-input input:focus {
+            outline: none;
+            border-color: #78a206;
+        }
+        
+        .apply-coupon-btn {
+            padding: 12px 25px;
+            background: #78a206;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .apply-coupon-btn:hover {
+            background: #5d7d05;
+        }
+        
+        /* Animation Keyframes */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 53%, 80%, 100% { transform: translateY(0); }
+            40%, 43% { transform: translateY(-10px); }
+            70% { transform: translateY(-5px); }
+            90% { transform: translateY(-2px); }
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .cart-summary-wrapper {
+                grid-template-columns: 1fr 350px;
+                gap: 30px;
+            }
+        }
+        
+        @media (max-width: 991px) {
+            .cart-summary-wrapper {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .cart-totals {
+                position: static;
+            }
+            
+            .cart-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .cart-buttons {
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .cart-main-area {
+                padding: 40px 0;
+            }
+            
+            .cart-table-wrapper {
+                overflow-x: auto;
+            }
+            
+            .cart-table {
+                min-width: 800px;
+            }
+            
+            .cart-table thead th,
+            .cart-table tbody td {
+                padding: 15px 10px;
+            }
+            
+            .cart-product-info {
+                gap: 10px;
+            }
+            
+            .cart-product-image {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .cart-buttons {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .coupon-form {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        /* Custom Footer Styles */
+        .custom-footer {
+            background: linear-gradient(135deg, #2c5f05 0%, #1a3d03 50%, #0f2001 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Header Alignment Styles */
+        .header-container .row {
+            align-items: center;
+        }
+        
+        .ht-main-menu nav ul {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .ht-main-menu nav ul li {
+            margin: 0 15px;
+        }
+        
+        .logo {
+            padding: 10px 0;
+        }
+
+        .custom-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20" fill="none"><path d="M0,10 Q25,0 50,10 T100,10 V20 H0 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: 200px 50px;
+            background-repeat: repeat-x;
+            animation: wave 10s linear infinite;
+            opacity: 0.5;
+        }
+
+        @keyframes wave {
+            0% { background-position: 0 0; }
+            100% { background-position: 200px 0; }
+        }
+
+        .footer-main {
+            padding: 10px 0 3px !important;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-brand {
+            text-align: center;
+            margin-bottom: 15px !important;
+        }
+
+        .footer-brand img {
+            max-height: 25px !important;
+            filter: brightness(2);
+            margin-bottom: 5px !important;
+        }
+
+        .footer-brand h3 {
+            color: #78a206;
+            font-size: 0.75rem !important;
+            font-weight: 600;
+            margin-bottom: 3px !important;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 400px;
+            margin: 0 auto;
+            line-height: 1.3;
+            font-size: 0.7rem !important;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 8px !important;
+            margin-bottom: 10px !important;
+        }
+
+        .footer-section h4 {
+            color: #78a206;
+            font-size: 0.75rem !important;
+            font-weight: 600;
+            margin-bottom: 8px !important;
+            position: relative;
+            padding-bottom: 3px !important;
+        }
+
+        .footer-section h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 2px;
+            background: linear-gradient(135deg, #78a206, #5d7d05);
+            border-radius: 2px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 3px !important;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links li:hover {
+            transform: translateX(3px);
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.7rem !important;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #78a206;
+            text-decoration: none;
+        }
+
+        .footer-links a i {
+            margin-right: 5px !important;
+            width: 12px;
+            text-align: center;
+        }
+
+        .contact-info-footer {
+            display: flex;
+            flex-direction: column;
+            gap: 5px !important;
+        }
+
+        .contact-item-footer {
+            display: flex;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.7rem !important;
+        }
+
+        .contact-item-footer i {
+            width: 14px;
+            height: 14px;
+            background: linear-gradient(135deg, #78a206, #5d7d05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 8px !important;
+            font-size: 8px !important;
+            flex-shrink: 0;
+        }
+
+        .newsletter-footer {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 12px !important;
+            border-radius: 10px !important;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .newsletter-footer h4 {
+            color: white;
+            margin-bottom: 5px !important;
+            font-size: 0.75rem !important;
+        }
+
+        .newsletter-footer p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 8px !important;
+            font-size: 0.65rem !important;
+        }
+
+        .newsletter-form-footer {
+            display: flex;
+            gap: 5px !important;
+            margin-bottom: 8px !important;
+        }
+
+        .newsletter-form-footer input {
+            flex: 1;
+            padding: 6px 10px !important;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px !important;
+            color: white;
+            font-size: 0.7rem !important;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form-footer input:focus {
+            outline: none;
+            border-color: #78a206;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .newsletter-form-footer input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .newsletter-btn {
+            padding: 6px 12px !important;
+            background: linear-gradient(135deg, #78a206, #5d7d05);
+            border: none;
+            border-radius: 15px !important;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            font-size: 0.7rem !important;
+        }
+
+        .newsletter-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 3px 10px rgba(120, 162, 6, 0.4);
+        }
+
+        .social-footer {
+            display: flex;
+            justify-content: center;
+            gap: 8px !important;
+            margin-bottom: 10px !important;
+        }
+
+        .social-footer a {
+            width: 24px !important;
+            height: 24px !important;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px !important;
+            transition: all 0.3s ease;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .social-footer a:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            color: white;
+        }
+
+        .social-footer a.facebook:hover { background: #3b5998; border-color: #3b5998; }
+        .social-footer a.instagram:hover { background: linear-gradient(135deg, #e4405f, #c13584); border-color: #e4405f; }
+        .social-footer a.twitter:hover { background: #1da1f2; border-color: #1da1f2; }
+        .social-footer a.youtube:hover { background: #ff0000; border-color: #ff0000; }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 8px 0 !important;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-bottom p {
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+            font-size: 0.7rem !important;
+        }
+
+        .footer-bottom a {
+            color: #78a206;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer-bottom a:hover {
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            
+            .newsletter-form-footer {
+                flex-direction: column;
+            }
+            
+            .footer-main {
+                padding: 8px 0 2px !important;
+            }
+        }
+        </style>
+      
+        
+
+        </style>
     </head>
     <body>
-        
+
         <!-- Header Area Start -->
         <header class="header-area header-sticky">
             <div class="header-container">
@@ -28,80 +894,33 @@
                     <div class="col-lg-5 display-none-md display-none-xs">
                         <div class="ht-main-menu">
                             <nav>
-                                <ul>
-                                    <li class="active"><a href="index.html">home <i class="fa fa-angle-down"></i></a>
-                                        <ul>
-                                            <li><a href="index.html">Home One</a></li>
-                                            <li><a href="index-2.html">Home Two</a></li>
-                                            <li><a href="index-3.html">Home Three</a></li>
-                                            <li><a href="index-4.html">Home Four</a></li>
-                                            <li><a href="index-5.html">Home Five</a></li>
-                                            <li><a href="index-6.html">Home Six</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="shop.html">vegetables <i class="fa fa-angle-down"></i></a>
-                                        <ul class="ht-mega-menu">
-                                            <li>
-                                                <ul>
-                                                    <li class="mega-menu-title">Bags</li>
-                                                    <li><a href="shop.html">Crochet</a></li>
-                                                    <li><a href="shop.html">Sleeveles</a></li>
-                                                    <li><a href="shop.html">Stripes</a></li>
-                                                    <li><a href="shop.html">Sweaters</a></li>
-                                                    <li><a href="shop.html"><img src="assets/img/banner/menu-1.jpg" alt=""></a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <ul>
-                                                    <li class="mega-menu-title">Bottoms</li>
-                                                    <li><a href="shop.html">Flat sandals</a></li>
-                                                    <li><a href="shop.html">Heeled sandals</a></li>
-                                                    <li><a href="shop.html">Polo Short Sleeve</a></li>
-                                                    <li><a href="shop.html">Short Sleeve</a></li>
-                                                    <li><a href="shop.html"><img src="assets/img/banner/menu-2.jpg" alt=""></a></li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <ul>
-                                                    <li class="mega-menu-title">Shirts</li>
-                                                    <li><a href="shop.html">Flat sandals</a></li>
-                                                    <li><a href="shop.html">Heeled sandals</a></li>
-                                                    <li><a href="shop.html">Polo Short Sleeve</a></li>
-                                                    <li><a href="shop.html">Short Sleeve</a></li>
-                                                    <li><a href="shop.html"><img src="assets/img/banner/menu-3.jpg" alt=""></a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </li>
+                                <ul style="display: flex; align-items: center;">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About Us</a></li>
                                     <li><a href="shop.html">Shop <i class="fa fa-angle-down"></i></a>
                                         <ul>
-                                            <li><a href="shop-full-width.html">shop full Width</a></li>
-                                            <li><a href="shop-right-sidebar.html">shop Right Sidebar</a></li>
-                                            <li><a href="wishlist.html">Wishlist Page</a></li>
-                                            <li><a href="cart.html">cart Page</a></li>
-                                            <li><a href="checkout.html">checkout Page</a></li>
-                                            <li><a href="product-details.html">Single Shop</a></li>
-                                            <li><a href="my-account.html">My Account</a></li>
-                                            <li><a href="login-register.html">login / register </a></li>
+                                            <li><a href="shop-full-width.html">Shop Full Width</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="blog.html">blog <i class="fa fa-angle-down"></i></a>
+                                    <li><a href="blog.html">Blog <i class="fa fa-angle-down"></i></a>
                                         <ul>
-                                            <li><a href="blog-2-column.html">blog 2 column</a></li>
-                                            <li><a href="blog-3-column.html">blog 3 column</a></li>
-                                            <li><a href="blog-left-sidebar.html">blog Left Sidebar</a></li>
-                                            <li><a href="blog-details.html">blog details</a></li>
-                                            <li><a href="blog-details-left-sidebar.html">blog details left Sidebar</a></li>
+                                            <li><a href="blog-2-column.html">Blog 2 Column</a></li>
+                                            <li><a href="blog-3-column.html">Blog 3 Column</a></li>
+                                            <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
+                                            <li><a href="blog-details.html">Blog Details</a></li>
+                                            <li><a href="blog-details-left-sidebar.html">Blog Details Left Sidebar</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="contact.html">contact</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
                                 </ul>
                             </nav>
                         </div>
                     </div>
                     <div class="col-lg-2 col-sm-4">
-                        <div class="logo text-center">
-                            <a href="index.html"><img src="assets/img/logo/logo.png" alt="NatureCircle"></a>
+                        <div class="logo text-center" style="display: flex; align-items: center; height: 60px;">
+                            <a href="index.html" style="display: flex; align-items: center;">
+                                <img src="assets/img/logo/logo-1.png" alt="NatureCircle" style="max-height: 40px; width: auto;">
+                            </a>
                         </div>
                     </div>
                     <div class="col-lg-5 col-sm-8">
@@ -143,56 +962,6 @@
                                     <i class="icon icon-FullShoppingCart"></i>
                                     <span>2</span>
                                 </a>
-                                <div class="cart-item-wrapper">
-                                    <div class="single-cart-item">
-                                        <div class="cart-img">
-                                            <a href="cart.html"><img src="assets/img/cart/1.jpg" alt=""></a>
-                                        </div>
-                                        <div class="cart-text-btn">
-                                            <div class="cart-text">
-                                                <h5><a href="cart.html">Fresh Fruit Juice</a></h5>
-                                                <span class="cart-qty">×1</span>
-                                                <span class="cart-price">$68.00</span>
-                                            </div>
-                                            <button type="button"><i class="fa fa-close"></i></button>
-                                        </div>
-                                    </div>
-                                    <div class="single-cart-item">
-                                        <div class="cart-img">
-                                            <a href="cart.html"><img src="assets/img/cart/2.jpg" alt=""></a>
-                                        </div>
-                                        <div class="cart-text-btn">
-                                            <div class="cart-text">
-                                                <h5><a href="cart.html">Fresh Vegetables</a></h5>
-                                                <span class="cart-qty">×1</span>
-                                                <span class="cart-price">$98.00</span>
-                                            </div>
-                                            <button type="button"><i class="fa fa-close"></i></button>
-                                        </div>
-                                    </div>
-                                    <div class="cart-price-total">
-                                        <div class="cart-price-info d-flex justify-content-between">
-                                            <span>Sub-Total :</span>
-                                            <span>$135.00</span>
-                                        </div>
-                                        <div class="cart-price-info d-flex justify-content-between">
-                                            <span>Eco Tax (-2.00) :</span>
-                                            <span>$4.00</span>
-                                        </div>
-                                        <div class="cart-price-info d-flex justify-content-between">
-                                            <span>VAT (20%) :</span>
-                                            <span>$27.00</span>
-                                        </div>
-                                        <div class="cart-price-info d-flex justify-content-between">
-                                            <span>Total :</span>
-                                            <span>$166.00</span>
-                                        </div>
-                                    </div>
-                                    <div class="cart-links">
-                                        <a href="cart.html">View cart</a>
-                                        <a href="checkout.html">Checkout</a>
-                                    </div>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -204,39 +973,23 @@
                 <div class="mobile-menu container">
                     <nav id="mobile-menu-active">
                         <ul class="menu-overflow">
-                            <li><a href="index.html">HOME</a>
+                            <li><a href="index.html">HOME</a></li>
+                            <li><a href="about.html">ABOUT US</a></li>
+                            <li><a href="shop.html">SHOP</a>
                                 <ul>
-                                    <li><a href="index.html">Home One</a></li>
-                                    <li><a href="index-2.html">Home Two</a></li>
-                                    <li><a href="index-3.html">Home Three</a></li>
-                                    <li><a href="index-4.html">Home Four</a></li>
-                                    <li><a href="index-5.html">Home Five</a></li>
-                                    <li><a href="index-6.html">Home Six</a></li>
+                                    <li><a href="shop-full-width.html">Shop Full Width</a></li>
                                 </ul>
                             </li>
-                            <li><a href="shop.html">Shop</a>
+                            <li><a href="blog.html">BLOG</a>
                                 <ul>
-                                    <li><a href="shop-full-width.html">shop full Width</a></li>
-                                    <li><a href="shop-right-sidebar.html">shop Right Sidebar</a></li>
-                                    <li><a href="wishlist.html">Wishlist Page</a></li>
-                                    <li><a href="cart.html">cart Page</a></li>
-                                    <li><a href="checkout.html">checkout Page</a></li>
-                                    <li><a href="product-details.html">Single Shop</a></li>
-                                    <li><a href="my-account.html">My Account</a></li>
-                                    <li><a href="login-register.html">login / register </a></li>
+                                    <li><a href="blog-2-column.html">Blog 2 Column</a></li>
+                                    <li><a href="blog-3-column.html">Blog 3 Column</a></li>
+                                    <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
+                                    <li><a href="blog-details.html">Blog Details</a></li>
+                                    <li><a href="blog-details-left-sidebar.html">Blog Details Left Sidebar</a></li>
                                 </ul>
                             </li>
-                            <li><a href="blog.html">Blog</a>
-                                <ul>
-                                    <li><a href="blog-2-column.html">blog 2 column</a></li>
-                                    <li><a href="blog-3-column.html">blog 3 column</a></li>
-                                    <li><a href="blog-left-sidebar.html">blog Left Sidebar</a></li>
-                                    <li><a href="blog-details.html">blog details</a></li>
-                                    <li><a href="blog-details-left-sidebar.html">blog details left Sidebar</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="contact.html">Contact</a></li>
-                            <li><a href="404.html">404</a></li>
+                            <li><a href="contact.html">CONTACT</a></li>
                         </ul>
                     </nav>							
                 </div>
@@ -307,266 +1060,656 @@
         <!-- Breadcrumb Area Start -->
         <div class="breadcrumb-area bg-12 text-center">
             <div class="container">
-                <h1>My Cart</h1>
+                <h1>Shopping Cart</h1>
                 <nav aria-label="breadcrumb">
                     <ul class="breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Cart</li>
+                        <li class="breadcrumb" aria-current="page">/Cart</li>
                     </ul>
                 </nav>
             </div>
         </div>
         <!-- Breadcrumb Area End -->
-        <!-- Cart Area Start -->
-        <div class="cart-area table-area pt-110 pb-95">
+        
+        <!-- Cart Main Area Start -->
+        <div class="cart-main-area">
             <div class="container">
-                <div class="table-responsive">
-                    <table class="table product-table text-center">
+                
+                <!-- Cart Content -->
+                <div class="cart-table-wrapper animate-fadeInUp">
+                    <table class="cart-table">
                         <thead>
                             <tr>
-                                <th class="table-remove">remove</th>
-                                <th class="table-image">image</th>
-                                <th class="table-p-name">product</th>
-                                <th class="table-p-price">price</th>
-                                <th class="table-p-qty">quantity</th>
-                                <th class="table-total">total</th>
+                                <th>Product</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Subtotal</th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td class="table-remove"><button><i class="fa fa-trash"></i></button></td>
-                                <td class="table-image"><a href="product-details.html"><img src="assets/img/product/3.jpg" alt=""></a></td>
-                                <td class="table-p-name"><a href="product-details.html">Habitasse dictumst</a></td>
-                                <td class="table-p-price"><p>$65.00</p></td>
-                                <td class="table-p-qty"><input value="1" name="cart-qty" type="number"></td>
-                                <td class="table-total"><p>$65.00</p></td>
+                            <!-- Cart Item 1 -->
+                            <tr class="animate-slideInUp delay-1">
+                                <td>
+                                    <div class="cart-product-info">
+                                        <div class="cart-product-image">
+                                            <img src="assets/img/product/1.jpg" alt="Sacred Frankincense Face Oil">
+                                        </div>
+                                        <div class="cart-product-details">
+                                            <h5><a href="product-details.html">Sacred Frankincense Face Oil</a></h5>
+                                            <div class="product-attributes">
+                                                <span>Size: 30ml</span> | <span>Natural & Organic</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="cart-price">$68.00</span>
+                                </td>
+                                <td>
+                                    <div class="quantity-controls">
+                                        <button class="qty-btn" data-action="decrease">-</button>
+                                        <input type="number" class="qty-input" value="2" min="1">
+                                        <button class="qty-btn" data-action="increase">+</button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="cart-total-price">$136.00</span>
+                                </td>
+                                <td>
+                                    <button class="remove-btn" title="Remove item">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </td>
                             </tr>
-                            <tr>
-                                <td class="table-remove"><button><i class="fa fa-trash"></i></button></td>
-                                <td class="table-image"><a href="product-details.html"><img src="assets/img/product/4.jpg" alt=""></a></td>
-                                <td class="table-p-name"><a href="product-details.html">Kaoreet lobortis</a></td>
-                                <td class="table-p-price"><p>$95.00</p></td>
-                                <td class="table-p-qty"><input value="1" name="cart-qty" type="number"></td>
-                                <td class="table-total"><p>$95.00</p></td>
+                            
+                            <!-- Cart Item 2 -->
+                            <tr class="animate-slideInUp delay-2">
+                                <td>
+                                    <div class="cart-product-info">
+                                        <div class="cart-product-image">
+                                            <img src="assets/img/product/2.jpg" alt="Organic Lavender Body Butter">
+                                        </div>
+                                        <div class="cart-product-details">
+                                            <h5><a href="product-details.html">Organic Lavender Body Butter</a></h5>
+                                            <div class="product-attributes">
+                                                <span>Size: 200ml</span> | <span>Moisturizing & Calming</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="cart-price">$45.00</span>
+                                </td>
+                                <td>
+                                    <div class="quantity-controls">
+                                        <button class="qty-btn" data-action="decrease">-</button>
+                                        <input type="number" class="qty-input" value="1" min="1">
+                                        <button class="qty-btn" data-action="increase">+</button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="cart-total-price">$45.00</span>
+                                </td>
+                                <td>
+                                    <button class="remove-btn" title="Remove item">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            
+                            <!-- Cart Item 3 -->
+                            <tr class="animate-slideInUp delay-3">
+                                <td>
+                                    <div class="cart-product-info">
+                                        <div class="cart-product-image">
+                                            <img src="assets/img/product/3.jpg" alt="Green Tea Antioxidant Serum">
+                                        </div>
+                                        <div class="cart-product-details">
+                                            <h5><a href="product-details.html">Green Tea Antioxidant Serum</a></h5>
+                                            <div class="product-attributes">
+                                                <span>Size: 15ml</span> | <span>Anti-aging & Revitalizing</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="cart-price">$52.00</span>
+                                </td>
+                                <td>
+                                    <div class="quantity-controls">
+                                        <button class="qty-btn" data-action="decrease">-</button>
+                                        <input type="number" class="qty-input" value="1" min="1">
+                                        <button class="qty-btn" data-action="increase">+</button>
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="cart-total-price">$52.00</span>
+                                </td>
+                                <td>
+                                    <button class="remove-btn" title="Remove item">
+                                        <i class="fa fa-trash"></i>
+                                    </button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
-                <div class="table-bottom-wrapper">
-                    <div class="table-coupon d-flex fix justify-content-start">
-                        <input type="text" placeholder="Coupon code">
-                        <button type="submit">Apply coupon</button>
-                    </div>
-                    <div class="table-update d-flex justify-content-end">
-                        <button type="button" disabled>Update cart</button>
+                
+                <!-- Cart Actions -->
+                <div class="cart-actions animate-fadeInUp delay-2">
+                    <div class="cart-buttons">
+                        <a href="shop.html" class="btn-cart btn-continue">
+                            <i class="fa fa-arrow-left"></i> Continue Shopping
+                        </a>
+                        <button class="btn-cart btn-update">
+                            <i class="fa fa-refresh"></i> Update Cart
+                        </button>
+                        <button class="btn-cart btn-clear">
+                            <i class="fa fa-trash"></i> Clear Cart
+                        </button>
                     </div>
                 </div>
-            </div>
-            <div class="container">
-                <div class="table-total-wrapper d-flex justify-content-end pt-60">
-                    <div class="table-total-content">
-                        <h2>Cart totals</h2>
-                        <div class="table-total-amount">
-                            <div class="single-total-content d-flex justify-content-between">
-                                <span>Subtotal</span>
-                                <span class="c-total-price">$160.00</span>
+                
+                <!-- Coupon Section -->
+                <div class="coupon-section animate-slideInUp delay-3">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h4>Apply Discount Code</h4>
+                            <div class="coupon-form">
+                                <div class="coupon-input">
+                                    <label for="coupon-code">Coupon Code</label>
+                                    <input type="text" id="coupon-code" placeholder="Enter coupon code">
+                                </div>
+                                <button class="apply-coupon-btn">Apply Coupon</button>
                             </div>
-                            <div class="single-total-content d-flex justify-content-between">
-                                <span>Shipping</span>
-                                <span class="c-total-price"><span>Flat Rate:</span> $5.00</span>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="coupon-info">
+                                <h5>Available Offers:</h5>
+                                <ul style="list-style: none; padding: 0; margin-top: 15px;">
+                                    <li style="margin-bottom: 8px; color: #666;"><i class="fa fa-tag" style="color: #78a206; margin-right: 8px;"></i> NATURAL10 - 10% off on first order</li>
+                                    <li style="margin-bottom: 8px; color: #666;"><i class="fa fa-gift" style="color: #78a206; margin-right: 8px;"></i> FREESHIP - Free shipping on orders $75+</li>
+                                    <li style="color: #666;"><i class="fa fa-heart" style="color: #78a206; margin-right: 8px;"></i> LOYALTY20 - 20% off for returning customers</li>
+                                </ul>
                             </div>
-                            <div class="single-total-content d-flex justify-content-end">
-                                <a href="#">Calculate shipping</a>
-                            </div>
-                            <div class="single-total-content d-flex justify-content-between">
-                                <span>Total</span>
-                                <span class="c-total-price">$165.00</span>
-                            </div>
-                            <a href="checkout.html">Proceed to checkout</a>
                         </div>
                     </div>
                 </div>
+                
+                <!-- Cart Summary -->
+                <div class="cart-summary-wrapper animate-slideInUp delay-4">
+                    <div class="shipping-calculator">
+                        <h4><i class="fa fa-truck"></i> Calculate Shipping</h4>
+                        <form class="shipping-form">
+                            <div class="form-group">
+                                <label for="country">Country</label>
+                                <select id="country">
+                                    <option value="">Select Country</option>
+                                    <option value="kenya">Kenya</option>
+                                    <option value="uganda">Uganda</option>
+                                    <option value="tanzania">Tanzania</option>
+                                    <option value="usa">United States</option>
+                                    <option value="uk">United Kingdom</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="state">State/Region</label>
+                                <input type="text" id="state" placeholder="Enter state or region">
+                            </div>
+                            <div class="form-group">
+                                <label for="postal">Postal Code</label>
+                                <input type="text" id="postal" placeholder="Enter postal code">
+                            </div>
+                            <button type="submit" class="btn-cart btn-update" style="width: 100%;">
+                                Calculate Shipping
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <div class="cart-totals">
+                        <h4><i class="fa fa-calculator"></i> Cart Totals</h4>
+                        
+                        <div class="totals-row">
+                            <span class="totals-label">Subtotal:</span>
+                            <span class="totals-value">$233.00</span>
+                        </div>
+                        
+                        <div class="totals-row">
+                            <span class="totals-label">Shipping:</span>
+                            <span class="totals-value">$12.00</span>
+                        </div>
+                        
+                        <div class="totals-row">
+                            <span class="totals-label">Tax (8%):</span>
+                            <span class="totals-value">$18.64</span>
+                        </div>
+                        
+                        <div class="totals-row">
+                            <span class="totals-label">Discount:</span>
+                            <span class="totals-value" style="color: #dc3545;">-$23.30</span>
+                        </div>
+                        
+                        <div class="totals-row">
+                            <span class="totals-label">Total:</span>
+                            <span class="totals-value">$240.34</span>
+                        </div>
+                        
+                        <a href="checkout.html" class="checkout-btn">
+                            <i class="fa fa-lock"></i> Proceed to Checkout
+                        </a>
+                        
+                        <div style="text-align: center; margin-top: 15px;">
+                            <small style="color: #666;">
+                                <i class="fa fa-shield"></i> Secure SSL encrypted checkout
+                            </small>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Trust Badges -->
+                <div class="trust-section" style="text-align: center; margin-top: 50px;">
+                    <div class="row">
+                        <div class="col-md-3 col-6 mb-3">
+                            <div style="padding: 20px; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                                <i class="fa fa-shield" style="font-size: 24px; color: #78a206; margin-bottom: 10px;"></i>
+                                <h6 style="margin: 0; color: #333;">Secure Checkout</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 mb-3">
+                            <div style="padding: 20px; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                                <i class="fa fa-truck" style="font-size: 24px; color: #78a206; margin-bottom: 10px;"></i>
+                                <h6 style="margin: 0; color: #333;">Fast Delivery</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 mb-3">
+                            <div style="padding: 20px; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                                <i class="fa fa-undo" style="font-size: 24px; color: #78a206; margin-bottom: 10px;"></i>
+                                <h6 style="margin: 0; color: #333;">Easy Returns</h6>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-6 mb-3">
+                            <div style="padding: 20px; background: white; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
+                                <i class="fa fa-headphones" style="font-size: 24px; color: #78a206; margin-bottom: 10px;"></i>
+                                <h6 style="margin: 0; color: #333;">24/7 Support</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
         </div>
-        <!-- Cart Area End -->
-        <!-- Footer Area Start -->
-        <footer class="footer-area">
-            <!-- Footer Top Area Start -->
-            <div class="footer-top bg-4 pt-120 pb-120">
-                <!-- Newsletter Area Start -->
-                    <div class="newsletter-area">
-                        <div class="container text-center">
-                            <div class="newsletter-container">
-                                <h2>Subscribe Newsletter.</h2>
-                                <p>Get e-mail updates about our latest shop and special offers.</p>
-                                <div class="newsletter-form mc_embed_signup">
-                                    <form action="#" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
-                                        <div id="mc_embed_signup_scroll" class="mc-form">
-                                            <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Enter you email address here..." required>
-                                            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                                            <div class="mc-news" aria-hidden="true"><input type="text" name="b_6bbb9b6f5827bd842d9640c82_05d85f18ef" tabindex="-1" value=""></div>
-                                            <button id="mc-embedded-subscribe" type="submit" name="subscribe" class="default-btn">Subscribe</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="social-icon">
-                                <a href="#"><i class="fa fa-twitter"></i></a>
-                                <a href="#"><i class="fa fa-google-plus"></i></a>
-                                <a href="#"><i class="fa fa-facebook"></i></a>
-                                <a href="#"><i class="fa fa-youtube"></i></a>
-                                <a href="#"><i class="fa fa-flickr"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                <!-- Newsletter Area End -->
-                <!-- Service Area Start -->
-                <div class="service-area pt-50">
-                    <div class="container">
-                        <div class="service-container">
-                            <div class="service-content">
-                                <div class="row">
-                                    <div class="col-lg-4 col-md-4">
-                                        <div class="single-service">
-                                            <div class="service-image">
-                                                <img src="assets/img/icon/rocket.png" alt="">
-                                            </div>
-                                            <div class="service-text">
-                                                <h3>Free delivery</h3>
-                                                <p>Nam liber tempor cum soluta nobis eleifend option congue.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4">
-                                        <div class="single-service">
-                                            <div class="service-image">
-                                                <img src="assets/img/icon/money.png" alt="">
-                                            </div>
-                                            <div class="service-text">
-                                                <h3>Money guarantee</h3>
-                                                <p>Nam liber tempor cum soluta nobis eleifend option congue.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4">
-                                        <div class="single-service">
-                                            <div class="service-image">
-                                                <img src="assets/img/icon/support.png" alt="">
-                                            </div>
-                                            <div class="service-text">
-                                                <h3>Online support</h3>
-                                                <p>Nam liber tempor cum soluta nobis eleifend option congue.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Service Area End -->
-                <!-- Footer Widget Area Start -->
-                <div class="footer-widget-area">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6">
-                                <div class="single-footer-widget">
-                                    <div class="footer-logo">
-                                        <a href="#"><img src="assets/img/logo/logo.png" alt=""></a>
-                                    </div>
-                                    <p>Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum.</p>
-                                    <div class="footer-text">
-                                        <span><i class="icon icon-Pointer"></i>Address : No 40 Baria Sreet 133/2, NewYork, USA.</span>
-                                        <span><i class="icon icon-Phone"></i>Phone : +(1234) 567 890</span>
-                                        <span><i class="icon icon-Mail"></i>Email : demo@naturecircle.com</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-3">
-                                <div class="single-footer-widget">
-                                    <h3>Products</h3>
-                                    <ul class="footer-widget-list">
-                                        <li><a href="shop.html">Prices drop</a></li>
-                                        <li><a href="shop.html">New products</a></li>
-                                        <li><a href="shop.html">Best sales</a></li>
-                                        <li><a href="shop.html">Stores</a></li>
-                                        <li><a href="#">Login</a></li>
-                                        <li><a href="#">My Account</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-2 col-md-3">
-                                <div class="single-footer-widget">
-                                    <h3>Our company</h3>
-                                    <ul class="footer-widget-list">
-                                        <li><a href="#">Delivery</a></li>
-                                        <li><a href="#">Legal Notice</a></li>
-                                        <li><a href="#">Documentation</a></li>
-                                        <li><a href="#">Secure payment</a></li>
-                                        <li><a href="contact.html">Contact us</a></li>
-                                        <li><a href="shop.html">Stores</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="single-footer-widget">
-                                    <h3>Instagram</h3>
-                                    <div class="instagram-image">
-                                        <div class="single-insta-img">
-                                            <a href="#"><img src="assets/img/instagram/1.jpg" alt=""></a>
-                                        </div>
-                                        <div class="single-insta-img">
-                                            <a href="#"><img src="assets/img/instagram/2.jpg" alt=""></a>
-                                        </div>
-                                        <div class="single-insta-img">
-                                            <a href="#"><img src="assets/img/instagram/3.jpg" alt=""></a>
-                                        </div>
-                                        <div class="single-insta-img">
-                                            <a href="#"><img src="assets/img/instagram/4.jpg" alt=""></a>
-                                        </div>
-                                        <div class="single-insta-img">
-                                            <a href="#"><img src="assets/img/instagram/5.jpg" alt=""></a>
-                                        </div>
-                                        <div class="single-insta-img">
-                                            <a href="#"><img src="assets/img/instagram/6.jpg" alt=""></a>
-                                        </div>
-                                        <div class="single-insta-img">
-                                            <a href="#"><img src="assets/img/instagram/7.jpg" alt=""></a>
-                                        </div>
-                                        <div class="single-insta-img">
-                                            <a href="#"><img src="assets/img/instagram/8.jpg" alt=""></a>
-                                        </div>
-                                    </div>
-                                    <a href="#">Follow our instagram <i class="fa fa-angle-double-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Footer Widget Area End -->
-            </div>
-            <!-- Footer Top Area End -->
-            <!-- Footer Bottom Area Start -->
-            <div class="footer-bottom-area pt-15 pb-30">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 d-flex col-md-6">
-                            <div class="footer-text-bottom">
-                                <p>Copyright &copy; <a href="#">Naturecircle</a>. All Rights Reserved</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div class="payment-img d-flex justify-content-end">
-                                <img src="assets/img/payment.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Footer Bottom Area End -->
-        </footer>
-        <!-- Footer Area End -->
+        <!-- Cart Main Area End -->
         
+        <!-- JavaScript for Cart Functionality -->
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize cart count
+            updateCartCount();
+            
+            // Handle remove item buttons
+            const removeButtons = document.querySelectorAll('.remove-btn');
+            removeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const row = this.closest('tr');
+                    const productName = row.querySelector('.cart-product-details h5 a').textContent;
+                    
+                    // Show confirmation dialog
+                    if (confirm(`Are you sure you want to remove "${productName}" from your cart?`)) {
+                        // Add fade out animation
+                        row.style.transition = 'all 0.3s ease';
+                        row.style.opacity = '0';
+                        row.style.transform = 'translateX(-100px)';
+                        
+                        // Remove the row after animation
+                        setTimeout(() => {
+                            row.remove();
+                            updateCartTotals();
+                            updateCartCount();
+                            checkEmptyCart();
+                        }, 300);
+                    }
+                });
+            });
+            
+            // Handle quantity changes
+            const qtyInputs = document.querySelectorAll('.qty-input');
+            const qtyButtons = document.querySelectorAll('.qty-btn');
+            
+            qtyInputs.forEach(input => {
+                input.addEventListener('change', function() {
+                    updateRowTotal(this);
+                    updateCartTotals();
+                });
+            });
+            
+            qtyButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const input = this.parentElement.querySelector('.qty-input');
+                    const action = this.getAttribute('data-action');
+                    let currentValue = parseInt(input.value);
+                    
+                    if (action === 'increase') {
+                        input.value = currentValue + 1;
+                    } else if (action === 'decrease' && currentValue > 1) {
+                        input.value = currentValue - 1;
+                    }
+                    
+                    updateRowTotal(input);
+                    updateCartTotals();
+                });
+            });
+            
+            // Handle clear cart button
+            const clearCartBtn = document.querySelector('.btn-clear');
+            if (clearCartBtn) {
+                clearCartBtn.addEventListener('click', function() {
+                    if (confirm('Are you sure you want to clear your entire cart?')) {
+                        const cartRows = document.querySelectorAll('.cart-table tbody tr');
+                        cartRows.forEach((row, index) => {
+                            setTimeout(() => {
+                                row.style.transition = 'all 0.3s ease';
+                                row.style.opacity = '0';
+                                row.style.transform = 'scale(0.8)';
+                                setTimeout(() => {
+                                    row.remove();
+                                    if (index === cartRows.length - 1) {
+                                        updateCartCount();
+                                        checkEmptyCart();
+                                    }
+                                }, 300);
+                            }, index * 100);
+                        });
+                    }
+                });
+            }
+            
+            // Handle update cart button
+            const updateCartBtn = document.querySelector('.btn-update');
+            if (updateCartBtn) {
+                updateCartBtn.addEventListener('click', function() {
+                    updateCartTotals();
+                    
+                    // Show success message
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '<i class="fa fa-check"></i> Updated!';
+                    this.style.background = '#28a745';
+                    
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                        this.style.background = '';
+                    }, 2000);
+                });
+            }
+            
+            // Function to update cart count in header
+            function updateCartCount() {
+                const cartRows = document.querySelectorAll('.cart-table tbody tr');
+                const cartCountElement = document.querySelector('.cart-wrapper a span');
+                
+                if (cartCountElement) {
+                    cartCountElement.textContent = cartRows.length;
+                    
+                    // Add visual feedback when count changes
+                    cartCountElement.style.transform = 'scale(1.2)';
+                    cartCountElement.style.transition = 'transform 0.3s ease';
+                    
+                    setTimeout(() => {
+                        cartCountElement.style.transform = 'scale(1)';
+                    }, 300);
+                }
+            }
+            
+            // Function to update individual row total
+            function updateRowTotal(qtyInput) {
+                const row = qtyInput.closest('tr');
+                const priceElement = row.querySelector('.cart-price');
+                const totalElement = row.querySelector('.cart-total-price');
+                
+                const price = parseFloat(priceElement.textContent.replace('$', ''));
+                const quantity = parseInt(qtyInput.value);
+                const total = price * quantity;
+                
+                totalElement.textContent = '$' + total.toFixed(2);
+            }
+            
+            // Function to update cart totals
+            function updateCartTotals() {
+                const totalElements = document.querySelectorAll('.cart-total-price');
+                let subtotal = 0;
+                
+                totalElements.forEach(element => {
+                    subtotal += parseFloat(element.textContent.replace('$', ''));
+                });
+                
+                // Update subtotal
+                const subtotalElement = document.querySelector('.totals-row:first-child .totals-value');
+                if (subtotalElement) {
+                    subtotalElement.textContent = '$' + subtotal.toFixed(2);
+                }
+                
+                // Calculate other totals (shipping, tax, discount remain same for demo)
+                const shipping = 12.00;
+                const taxRate = 0.08;
+                const discount = subtotal * 0.1; // 10% discount
+                
+                const tax = subtotal * taxRate;
+                const finalTotal = subtotal + shipping + tax - discount;
+                
+                // Update tax
+                const taxElement = document.querySelector('.totals-row:nth-child(3) .totals-value');
+                if (taxElement) {
+                    taxElement.textContent = '$' + tax.toFixed(2);
+                }
+                
+                // Update discount
+                const discountElement = document.querySelector('.totals-row:nth-child(4) .totals-value');
+                if (discountElement) {
+                    discountElement.textContent = '-$' + discount.toFixed(2);
+                }
+                
+                // Update final total
+                const finalTotalElement = document.querySelector('.totals-row:last-child .totals-value');
+                if (finalTotalElement) {
+                    finalTotalElement.textContent = '$' + finalTotal.toFixed(2);
+                }
+            }
+            
+            // Function to check if cart is empty and show empty state
+            function checkEmptyCart() {
+                const cartRows = document.querySelectorAll('.cart-table tbody tr');
+                if (cartRows.length === 0) {
+                    showEmptyCart();
+                }
+            }
+            
+            // Function to show empty cart message
+            function showEmptyCart() {
+                const cartTableWrapper = document.querySelector('.cart-table-wrapper');
+                const cartActions = document.querySelector('.cart-actions');
+                const couponSection = document.querySelector('.coupon-section');
+                const cartSummary = document.querySelector('.cart-summary-wrapper');
+                
+                // Hide existing cart elements
+                cartActions.style.display = 'none';
+                couponSection.style.display = 'none';
+                cartSummary.style.display = 'none';
+                
+                // Show empty cart message
+                cartTableWrapper.innerHTML = `
+                    <div class="empty-cart animate-fadeInUp">
+                        <div class="empty-cart-icon">
+                            <i class="fa fa-shopping-cart"></i>
+                        </div>
+                        <h3>Your Cart is Empty</h3>
+                        <p>Looks like you haven't added any items to your cart yet. Start shopping to fill it up!</p>
+                        <a href="shop.html" class="default-btn">
+                            <i class="fa fa-shopping-bag"></i> Continue Shopping
+                        </a>
+                    </div>
+                `;
+            }
+            
+            // Handle coupon application
+            const applyCouponBtn = document.querySelector('.apply-coupon-btn');
+            if (applyCouponBtn) {
+                applyCouponBtn.addEventListener('click', function() {
+                    const couponInput = document.querySelector('#coupon-code');
+                    const couponCode = couponInput.value.trim().toUpperCase();
+                    
+                    // Simple coupon validation (you can expand this)
+                    const validCoupons = {
+                        'NATURAL10': 0.10,
+                        'FREESHIP': 'free_shipping',
+                        'LOYALTY20': 0.20
+                    };
+                    
+                    if (validCoupons[couponCode]) {
+                        // Show success message
+                        const originalText = this.innerHTML;
+                        this.innerHTML = '<i class="fa fa-check"></i> Applied!';
+                        this.style.background = '#28a745';
+                        
+                        // Update totals based on coupon
+                        updateCartTotals();
+                        
+                        setTimeout(() => {
+                            this.innerHTML = originalText;
+                            this.style.background = '';
+                        }, 2000);
+                    } else {
+                        // Show error message
+                        const originalText = this.innerHTML;
+                        this.innerHTML = '<i class="fa fa-times"></i> Invalid';
+                        this.style.background = '#dc3545';
+                        
+                        setTimeout(() => {
+                            this.innerHTML = originalText;
+                            this.style.background = '';
+                        }, 2000);
+                    }
+                    
+                    couponInput.value = '';
+                });
+            }
+        });
+        </script>
+        
+        
+        <!-- Custom Footer Start -->
+        <footer class="custom-footer">
+            <div class="footer-main">
+                <div class="container">
+                    <!-- Footer Brand Section -->
+                    <div class="footer-brand">
+                        <img src="assets/img/logo/logo.png" alt="The Herbarium">
+                        <h3>The Herbarium</h3>
+                        <p>Discover the beauty of nature with our premium organic products. We're dedicated to bringing you the finest natural ingredients for a healthier, more beautiful you.</p>
+                    </div>
+
+                    <!-- Footer Content Grid -->
+                    <div class="footer-content">
+                        <!-- Quick Links -->
+                        <div class="footer-section">
+                            <h4>Quick Links</h4>
+                            <ul class="footer-links">
+                                <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                                <li><a href="shop.html"><i class="fa fa-shopping-bag"></i> Shop Products</a></li>
+                                <li><a href="blog.html"><i class="fa fa-newspaper-o"></i> Our Blog</a></li>
+                                <li><a href="contact.html"><i class="fa fa-envelope"></i> Contact Us</a></li>
+                                <li><a href="my-account.html"><i class="fa fa-user"></i> My Account</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Categories -->
+                        <div class="footer-section">
+                            <h4>Categories</h4>
+                            <ul class="footer-links">
+                                <li><a href="shop.html"><i class="fa fa-leaf"></i> Natural Skincare</a></li>
+                                <li><a href="shop.html"><i class="fa fa-heart"></i> Wellness Products</a></li>
+                                <li><a href="shop.html"><i class="fa fa-star"></i> Best Sellers</a></li>
+                                <li><a href="shop.html"><i class="fa fa-gift"></i> Gift Sets</a></li>
+                                <li><a href="shop.html"><i class="fa fa-tags"></i> Special Offers</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Support -->
+                        <div class="footer-section">
+                            <h4>Customer Support</h4>
+                            <ul class="footer-links">
+                                <li><a href="#"><i class="fa fa-question-circle"></i> Help Center</a></li>
+                                <li><a href="#"><i class="fa fa-truck"></i> Shipping Info</a></li>
+                                <li><a href="#"><i class="fa fa-undo"></i> Returns & Refunds</a></li>
+                                <li><a href="#"><i class="fa fa-shield"></i> Privacy Policy</a></li>
+                                <li><a href="#"><i class="fa fa-file-text"></i> Terms of Service</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Contact Info -->
+                        <div class="footer-section">
+                            <h4>Get in Touch</h4>
+                            <div class="contact-info-footer">
+                                <div class="contact-item-footer">
+                                    <i class="fa fa-map-marker"></i>
+                                    <span>Westlands, Nairobi<br>Kenya 00100</span>
+                                </div>
+                                <div class="contact-item-footer">
+                                    <i class="fa fa-phone"></i>
+                                    <span>+254 (712) 345-678</span>
+                                </div>
+                                <div class="contact-item-footer">
+                                    <i class="fa fa-envelope"></i>
+                                    <span>hello@herbarium.com</span>
+                                </div>
+                                <div class="contact-item-footer">
+                                    <i class="fa fa-clock-o"></i>
+                                    <span>Mon-Sat: 8AM-10PM (EAT)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Newsletter Section -->
+                    <div class="newsletter-footer">
+                        <h4>🌿 Stay Connected with Nature</h4>
+                        <p>Subscribe to our newsletter for exclusive offers, natural beauty tips, and the latest product updates!</p>
+                        <form class="newsletter-form-footer" action="#" method="post">
+                            <input type="email" placeholder="Enter your email address..." required>
+                            <button type="submit" class="newsletter-btn">Subscribe</button>
+                        </form>
+                        
+                        <!-- Social Media Links -->
+                        <div class="social-footer">
+                            <a href="#" class="facebook" title="Follow us on Facebook">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a href="#" class="instagram" title="Follow us on Instagram">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                            <a href="#" class="twitter" title="Follow us on Twitter">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="#" class="youtube" title="Subscribe to our YouTube">
+                                <i class="fa fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="container">
+                    <p>&copy; 2025 <a href="#">The Herbarium</a>. All rights reserved. Made with 💚 for nature lovers.</p>
+                </div>
+            </div>
+        </footer>
+        <!-- Custom Footer End -->
+        
+        <!-- Map js -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClpvcUyl31wMd7DJZQnnzI006S99u9nnM"></script>
+        <script  src="https://www.google.com/jsapi"></script>
+        <script src="assets/map/map.js"></script>
         <!-- All js here -->
        <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
         <script src="assets/js/bootstrap.min.js"></script>
@@ -575,5 +1718,4 @@
         <script src="assets/js/main.js"></script>
     </body>
 
-<!-- Mirrored from htmldemo.net/naturecircle/naturecircle/cart.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 20 Aug 2025 12:38:57 GMT -->
 </html>

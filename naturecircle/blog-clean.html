@@ -1,0 +1,760 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Blog - The Herbarium | Natural Beauty & Wellness</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Favicon -->
+        <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+        <!-- All css here -->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/ie7.css">
+        <link rel="stylesheet" href="assets/css/plugins.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <script src="assets/js/vendor/modernizr-3.5.0.min.js"></script>
+        
+        <!-- Clean Blog Page Styles -->
+        <style>
+        /* Ultra Compact Header */
+        .header-area {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+        
+        .header-container {
+            padding: 3px 15px;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .header-container .row {
+            width: 100%;
+            margin: 0;
+            align-items: center;
+        }
+        
+        .ht-main-menu ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .ht-main-menu ul li {
+            margin: 0 10px;
+        }
+        
+        .ht-main-menu ul li a {
+            color: #333;
+            text-decoration: none;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 5px 8px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        
+        .ht-main-menu ul li a:hover {
+            background: #28a745;
+            color: white;
+        }
+        
+        .ht-main-menu ul li ul {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 6px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            min-width: 180px;
+        }
+        
+        .ht-main-menu ul li:hover ul {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .ht-main-menu ul li ul li {
+            margin: 0;
+            display: block;
+        }
+        
+        .ht-main-menu ul li ul li a {
+            display: block;
+            padding: 8px 15px;
+            font-size: 11px;
+            border-radius: 0;
+            color: #666;
+        }
+        
+        .ht-main-menu ul li ul li a:hover {
+            background: #f8f9fa;
+            color: #28a745;
+            transform: translateX(5px);
+        }
+        
+        /* Logo Optimization */
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 40px;
+        }
+        
+        .logo a {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            max-height: 45px;
+            width: auto;
+        }
+        
+        /* Header Actions */
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 15px;
+        }
+        
+        .search-wrapper, .settings-wrapper, .cart-wrapper {
+            position: relative;
+        }
+        
+        .search-wrapper a, .settings-wrapper a, .cart-wrapper a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: #f8f9fa;
+            border-radius: 50%;
+            color: #333;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .search-wrapper a:hover, .settings-wrapper a:hover, .cart-wrapper a:hover {
+            background: #28a745;
+            color: white;
+            transform: scale(1.1);
+        }
+        
+        /* Mobile Menu */
+        @media (max-width: 991px) {
+            .display-none-md {
+                display: none !important;
+            }
+            
+            .mobile-menu-area {
+                background: white;
+                border-top: 1px solid #eee;
+            }
+        }
+        
+        /* Clean Breadcrumb Section */
+        .breadcrumb-area {
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            padding: 60px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .breadcrumb-area::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('assets/img/banner/about.jpg') center/cover;
+            opacity: 0.1;
+            z-index: 1;
+        }
+        
+        .breadcrumb-area .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .breadcrumb-area h1 {
+            color: white;
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .breadcrumb {
+            background: rgba(255,255,255,0.2);
+            border-radius: 30px;
+            padding: 10px 20px;
+            display: inline-flex;
+            align-items: center;
+            backdrop-filter: blur(10px);
+        }
+        
+        .breadcrumb-item {
+            color: white;
+            font-weight: 500;
+        }
+        
+        .breadcrumb-item a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .breadcrumb-item a:hover {
+            color: #ffd700;
+            transform: scale(1.05);
+        }
+        
+        /* Clean Content Area */
+        .clean-content-area {
+            padding: 80px 0;
+            background: #f8f9fa;
+            min-height: 50vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .coming-soon-message {
+            text-align: center;
+            max-width: 600px;
+            padding: 40px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .coming-soon-message h2 {
+            color: #28a745;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .coming-soon-message p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+        
+        .coming-soon-message .btn {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        
+        .coming-soon-message .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(40,167,69,0.4);
+        }
+        
+        /* Footer Styles */
+        .custom-footer {
+            background: linear-gradient(135deg, #2d5016 0%, #3d6b1f 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .custom-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #28a745, #20c997, #17a2b8, #6f42c1);
+            animation: gradientShift 3s ease-in-out infinite;
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .footer-main {
+            padding: 60px 0 40px;
+        }
+        
+        .footer-brand {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+        }
+        
+        .footer-brand img {
+            max-height: 80px;
+            margin-bottom: 20px;
+            filter: brightness(1.2);
+        }
+        
+        .footer-brand h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: #fff;
+            font-weight: 700;
+        }
+        
+        .footer-brand p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-section h4 {
+            color: #fff;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #28a745, #20c997);
+            border-radius: 2px;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+        
+        .footer-links a:hover {
+            color: #28a745;
+            transform: translateX(5px);
+        }
+        
+        .footer-links a i {
+            margin-right: 10px;
+            width: 16px;
+            color: #28a745;
+        }
+        
+        .contact-info-footer .contact-item-footer {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            color: rgba(255,255,255,0.8);
+        }
+        
+        .contact-item-footer i {
+            margin-right: 15px;
+            color: #28a745;
+            font-size: 1.1rem;
+            margin-top: 2px;
+            width: 20px;
+        }
+        
+        .newsletter-footer {
+            background: rgba(255,255,255,0.1);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 30px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .newsletter-footer h4 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        
+        .newsletter-footer p {
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .newsletter-form-footer {
+            display: flex;
+            max-width: 400px;
+            margin: 0 auto 25px;
+            gap: 10px;
+        }
+        
+        .newsletter-form-footer input {
+            flex: 1;
+            padding: 12px 15px;
+            border: none;
+            border-radius: 25px;
+            background: rgba(255,255,255,0.9);
+            color: #333;
+        }
+        
+        .newsletter-btn {
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #28a745, #20c997);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(40,167,69,0.4);
+        }
+        
+        .social-footer {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .social-footer a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-footer a:hover {
+            background: #28a745;
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            background: rgba(0,0,0,0.2);
+            padding: 20px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .footer-bottom p {
+            color: rgba(255,255,255,0.7);
+            margin: 0;
+        }
+        
+        .footer-bottom a {
+            color: #28a745;
+            text-decoration: none;
+        }
+        
+        .footer-bottom a:hover {
+            color: #20c997;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .breadcrumb-area h1 {
+                font-size: 2rem;
+            }
+            
+            .coming-soon-message h2 {
+                font-size: 2rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .newsletter-form-footer {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+        </style>
+    </head>
+
+    <body>
+
+        <!-- Header Area Start -->
+        <header class="header-area header-sticky">
+            <div class="header-container">
+                <div class="row">
+                    <div class="col-lg-5 display-none-md display-none-xs">
+                        <div class="ht-main-menu">
+                            <nav>
+                                <ul style="display: flex; align-items: center;">
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About Us</a></li>
+                                    <li><a href="shop.html">Shop <i class="fa fa-angle-down"></i></a>
+                                        <ul>
+                                            <li><a href="shop-full-width.html">Shop Full Width</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="blog.html">Blog <i class="fa fa-angle-down"></i></a>
+                                        <ul>
+                                            <li><a href="blog-2-column.html">Blog 2 Column</a></li>
+                                            <li><a href="blog-3-column.html">Blog 3 Column</a></li>
+                                            <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
+                                            <li><a href="blog-details.html">Blog Details</a></li>
+                                            <li><a href="blog-details-left-sidebar.html">Blog Details Left Sidebar</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-sm-4">
+                        <div class="logo text-center" style="display: flex; align-items: center; height: 60px;">
+                            <a href="index.html" style="display: flex; align-items: center;">
+                                <img src="assets/img/logo/logo-1.png" alt="NatureCircle" style="max-height: 40px; width: auto;">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-sm-8">
+                        <div class="header-content d-flex justify-content-end">
+                            <div class="search-wrapper">
+                                <a href="#"><span class="icon icon-Search"></span></a>
+                            </div>
+                            <div class="settings-wrapper">
+                                <a href="#"><i class="icon icon-Settings"></i></a>
+                            </div>
+                            <div class="cart-wrapper">
+                                <a href="#">
+                                    <i class="icon icon-FullShoppingCart"></i>
+                                    <span>2</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu Area Start -->
+            <div class="mobile-menu-area">
+                <div class="mobile-menu container">
+                    <nav id="mobile-menu-active">
+                        <ul class="menu-overflow">
+                            <li><a href="index.html">HOME</a></li>
+                            <li><a href="about.html">ABOUT US</a></li>
+                            <li><a href="shop.html">SHOP</a>
+                                <ul>
+                                    <li><a href="shop-full-width.html">Shop Full Width</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="blog.html">BLOG</a>
+                                <ul>
+                                    <li><a href="blog-2-column.html">Blog 2 Column</a></li>
+                                    <li><a href="blog-3-column.html">Blog 3 Column</a></li>
+                                    <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
+                                    <li><a href="blog-details.html">Blog Details</a></li>
+                                    <li><a href="blog-details-left-sidebar.html">Blog Details Left Sidebar</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="contact.html">CONTACT</a></li>
+                        </ul>
+                    </nav>							
+                </div>
+            </div>
+            <!-- Mobile Menu Area End -->
+        </header>
+        <!-- Header Area End -->
+        
+        <!-- Breadcrumb Area Start -->
+        <div class="breadcrumb-area bg-12 text-center">
+            <div class="container">
+                <h1>Beauty & Wellness Blog</h1>
+                <nav aria-label="breadcrumb">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                        <li class="breadcrumb-item" aria-current="page">Blog</li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!-- Breadcrumb Area End -->
+        
+        <!-- Clean Content Area -->
+        <div class="clean-content-area">
+            <div class="container">
+                <div class="coming-soon-message">
+                    <h2>🌿 Coming Soon</h2>
+                    <p>We're crafting amazing blog content about natural beauty, wellness tips, and sustainable living. Our expert writers are preparing thoughtful articles just for you!</p>
+                    <a href="shop-full-width.html" class="btn">Explore Our Products</a>
+                </div>
+            </div>
+        </div>
+        <!-- Clean Content Area End -->
+        
+        <!-- Custom Footer Start -->
+        <footer class="custom-footer">
+            <div class="footer-main">
+                <div class="container">
+                    <!-- Footer Brand Section -->
+                    <div class="footer-brand">
+                        <img src="assets/img/logo/logo.png" alt="The Herbarium">
+                        <h3>The Herbarium</h3>
+                        <p>Discover the beauty of nature with our premium organic products. We're dedicated to bringing you the finest natural ingredients for a healthier, more beautiful you.</p>
+                    </div>
+
+                    <!-- Footer Content Grid -->
+                    <div class="footer-content">
+                        <!-- Quick Links -->
+                        <div class="footer-section">
+                            <h4>Quick Links</h4>
+                            <ul class="footer-links">
+                                <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+                                <li><a href="shop-full-width.html"><i class="fa fa-shopping-bag"></i> Shop Products</a></li>
+                                <li><a href="blog.html"><i class="fa fa-newspaper-o"></i> Our Blog</a></li>
+                                <li><a href="contact.html"><i class="fa fa-envelope"></i> Contact Us</a></li>
+                                <li><a href="my-account.html"><i class="fa fa-user"></i> My Account</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Categories -->
+                        <div class="footer-section">
+                            <h4>Categories</h4>
+                            <ul class="footer-links">
+                                <li><a href="shop-full-width.html"><i class="fa fa-leaf"></i> Natural Skincare</a></li>
+                                <li><a href="shop-full-width.html"><i class="fa fa-heart"></i> Wellness Products</a></li>
+                                <li><a href="shop-full-width.html"><i class="fa fa-star"></i> Best Sellers</a></li>
+                                <li><a href="shop-full-width.html"><i class="fa fa-gift"></i> Gift Sets</a></li>
+                                <li><a href="shop-full-width.html"><i class="fa fa-tags"></i> Special Offers</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Support -->
+                        <div class="footer-section">
+                            <h4>Customer Support</h4>
+                            <ul class="footer-links">
+                                <li><a href="#"><i class="fa fa-question-circle"></i> Help Center</a></li>
+                                <li><a href="#"><i class="fa fa-truck"></i> Shipping Info</a></li>
+                                <li><a href="#"><i class="fa fa-undo"></i> Returns & Refunds</a></li>
+                                <li><a href="#"><i class="fa fa-shield"></i> Privacy Policy</a></li>
+                                <li><a href="#"><i class="fa fa-file-text"></i> Terms of Service</a></li>
+                            </ul>
+                        </div>
+
+                        <!-- Contact Info -->
+                        <div class="footer-section">
+                            <h4>Get in Touch</h4>
+                            <div class="contact-info-footer">
+                                <div class="contact-item-footer">
+                                    <i class="fa fa-map-marker"></i>
+                                    <span>Westlands, Nairobi<br>Kenya 00100</span>
+                                </div>
+                                <div class="contact-item-footer">
+                                    <i class="fa fa-phone"></i>
+                                    <span>+254 (712) 345-678</span>
+                                </div>
+                                <div class="contact-item-footer">
+                                    <i class="fa fa-envelope"></i>
+                                    <span>hello@herbarium.com</span>
+                                </div>
+                                <div class="contact-item-footer">
+                                    <i class="fa fa-clock-o"></i>
+                                    <span>Mon-Sat: 8AM-10PM (EAT)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Newsletter Section -->
+                    <div class="newsletter-footer">
+                        <h4>🌿 Stay Connected with Nature</h4>
+                        <p>Subscribe to our newsletter for exclusive offers, natural beauty tips, and the latest product updates!</p>
+                        <form class="newsletter-form-footer" action="#" method="post">
+                            <input type="email" placeholder="Enter your email address..." required>
+                            <button type="submit" class="newsletter-btn">Subscribe</button>
+                        </form>
+                        
+                        <!-- Social Media Links -->
+                        <div class="social-footer">
+                            <a href="#" class="facebook" title="Follow us on Facebook">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                            <a href="#" class="instagram" title="Follow us on Instagram">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                            <a href="#" class="twitter" title="Follow us on Twitter">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="#" class="youtube" title="Subscribe to our YouTube">
+                                <i class="fa fa-youtube"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="container">
+                    <p>&copy; 2025 <a href="#">The Herbarium</a>. All rights reserved. Made with 💚 for nature lovers.</p>
+                </div>
+            </div>
+        </footer>
+        <!-- Custom Footer End -->
+        
+        <!-- All js here -->
+        <script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/plugins.js"></script>
+        <script src="assets/js/ajax-mail.js"></script>
+        <script src="assets/js/main.js"></script>
+        
+    </body>
+</html>

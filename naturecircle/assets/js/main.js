@@ -595,4 +595,138 @@
         return false;
     });
 
+/*---------------------------------
+    Product Detail Page Functionality
+-----------------------------------*/
+    
+    // Initialize product detail functionality when page loads
+    $(document).ready(function() {
+        initProductDetailFeatures();
+    });
+    
+    function initProductDetailFeatures() {
+        // Product image gallery
+        $('.thumbnail-item').on('click', function() {
+            const newSrc = $(this).find('img').attr('src');
+            $('#main-product-img').attr('src', newSrc);
+            
+            $('.thumbnail-item').removeClass('active');
+            $(this).addClass('active');
+        });
+        
+        // Quantity controls
+        $('.qty-btn[data-action="decrease"]').on('click', function() {
+            const input = $('.qty-input');
+            let currentValue = parseInt(input.val());
+            if (currentValue > 1) {
+                input.val(currentValue - 1);
+            }
+        });
+        
+        $('.qty-btn[data-action="increase"]').on('click', function() {
+            const input = $('.qty-input');
+            let currentValue = parseInt(input.val());
+            input.val(currentValue + 1);
+        });
+        
+        // Add to cart functionality
+        $('.btn-primary').on('click', function(e) {
+            e.preventDefault();
+            showNotification('Added to cart successfully!');
+        });
+        
+        // Buy now functionality
+        $('.btn-success').on('click', function(e) {
+            e.preventDefault();
+            showNotification('Redirecting to checkout...');
+            // Here you would normally redirect to checkout
+        });
+        
+        // Wishlist toggle
+        $('.wishlist-btn').on('click', function(e) {
+            e.preventDefault();
+            $(this).toggleClass('active');
+            const isActive = $(this).hasClass('active');
+            const message = isActive ? 'Added to wishlist!' : 'Removed from wishlist!';
+            showNotification(message);
+        });
+        
+        // FAQ accordion
+        $('.faq-question').on('click', function() {
+            const answer = $(this).next('.faq-answer');
+            const icon = $(this).find('i');
+            
+            // Close all other FAQ items
+            $('.faq-answer').not(answer).removeClass('show');
+            $('.faq-question i').not(icon).removeClass('fa-minus').addClass('fa-plus');
+            
+            // Toggle current FAQ
+            answer.toggleClass('show');
+            if (answer.hasClass('show')) {
+                icon.removeClass('fa-plus').addClass('fa-minus');
+            } else {
+                icon.removeClass('fa-minus').addClass('fa-plus');
+            }
+        });
+        
+        // Review helpful buttons
+        $('.helpful-btn').on('click', function() {
+            $(this).toggleClass('voted');
+            const isVoted = $(this).hasClass('voted');
+            const text = isVoted ? 'Thanks for your feedback!' : 'Feedback removed';
+            showNotification(text);
+        });
+        
+        // Load more reviews
+        $('.load-more-reviews').on('click', function(e) {
+            e.preventDefault();
+            showNotification('Loading more reviews...');
+            // Here you would load more reviews via AJAX
+        });
+        
+        // Write review button
+        $('.write-review-btn').on('click', function(e) {
+            e.preventDefault();
+            showNotification('Review form would open here');
+            // Here you would open a review form modal or redirect
+        });
+        
+        // Smooth scroll to reviews section
+        $('.review-count').on('click', function(e) {
+            e.preventDefault();
+            $('html, body').animate({
+                scrollTop: $('.reviews-ratings').offset().top - 100
+            }, 800);
+        });
+    }
+    
+    // Show notification function
+    function showNotification(message) {
+        // Remove existing notification
+        $('.product-notification').remove();
+        
+        // Create and show new notification
+        const notification = $(`
+            <div class="product-notification">
+                <i class="fa fa-check-circle" style="margin-right: 8px;"></i>
+                ${message}
+            </div>
+        `);
+        
+        $('body').append(notification);
+        
+        // Show notification
+        setTimeout(() => {
+            notification.addClass('show');
+        }, 100);
+        
+        // Hide notification after 3 seconds
+        setTimeout(() => {
+            notification.removeClass('show');
+            setTimeout(() => {
+                notification.remove();
+            }, 300);
+        }, 3000);
+    }
+
 })(jQuery);	

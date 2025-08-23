@@ -1578,15 +1578,7 @@
                                             <li><a href="shop-full-width.html">Shop Full Width</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="blog.html">Blog <i class="fa fa-angle-down"></i></a>
-                                        <ul>
-                                            <li><a href="blog-2-column.html">Blog 2 Column</a></li>
-                                            <li><a href="blog-3-column.html">Blog 3 Column</a></li>
-                                            <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                            <li><a href="blog-details-left-sidebar.html">Blog Details Left Sidebar</a></li>
-                                        </ul>
-                                    </li>
+                                    <li><a href="blog.html">Blog</a></li>
                                     <li><a href="contact.html">Contact</a></li>
                                 </ul>
                             </nav>
@@ -1706,15 +1698,7 @@
                                     <li><a href="shop-full-width.html">Shop Full Width</a></li>
                                 </ul>
                             </li>
-                            <li><a href="blog.html">BLOG</a>
-                                <ul>
-                                    <li><a href="blog-2-column.html">Blog 2 Column</a></li>
-                                    <li><a href="blog-3-column.html">Blog 3 Column</a></li>
-                                    <li><a href="blog-left-sidebar.html">Blog Left Sidebar</a></li>
-                                    <li><a href="blog-details.html">Blog Details</a></li>
-                                    <li><a href="blog-details-left-sidebar.html">Blog Details Left Sidebar</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="blog.html">BLOG</a></li>
                             <li><a href="contact.html">CONTACT</a></li>
                         </ul>
                     </nav>							
@@ -1783,6 +1767,80 @@
             <!--End of Register Form-->
         </header>
         <!-- Header Area End -->
+
+        <!-- Quick View Modal -->
+        <div class="modal fade" id="quickViewModal" tabindex="-1" role="dialog" aria-labelledby="quickViewModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="quickViewModalLabel">Quick View</h5>
+                        <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <!-- Product Image -->
+                            <div class="col-lg-6">
+                                <div class="quick-view-image">
+                                    <img id="quickViewImg" src="" alt="Product Image" class="img-fluid">
+                                </div>
+                            </div>
+                            <!-- Product Details -->
+                            <div class="col-lg-6">
+                                <div class="quick-view-details">
+                                    <h3 id="quickViewTitle">Product Name</h3>
+                                    <p id="quickViewTagline" class="product-tagline-modal">Product tagline</p>
+                                    
+                                    <div class="quick-view-rating">
+                                        <div id="quickViewStars" class="stars"></div>
+                                        <span id="quickViewRating" class="rating-text-modal">4.5 out of 5</span>
+                                    </div>
+                                    
+                                    <div class="quick-view-price">
+                                        <span id="quickViewCurrentPrice" class="current-price-modal">$0.00</span>
+                                        <span id="quickViewOriginalPrice" class="original-price-modal">$0.00</span>
+                                        <span id="quickViewSavings" class="savings-badge-modal">Save 0%</span>
+                                    </div>
+                                    
+                                    <div class="quick-view-benefits">
+                                        <h5>Key Benefits:</h5>
+                                        <ul id="quickViewBenefitsList" class="benefits-list-modal">
+                                            <!-- Benefits will be populated here -->
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="quick-view-actions">
+                                        <div class="quantity-selector-modal">
+                                            <label>Quantity:</label>
+                                            <div class="qty-controls-modal">
+                                                <button type="button" class="qty-btn-modal minus">-</button>
+                                                <input type="number" value="1" min="1" max="10" class="qty-input-modal">
+                                                <button type="button" class="qty-btn-modal plus">+</button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="modal-cta-buttons">
+                                            <button class="btn btn-primary add-to-cart-modal">
+                                                <i class="fa fa-shopping-cart"></i> Add to Cart
+                                            </button>
+                                            <button class="btn btn-outline-secondary wishlist-btn-modal">
+                                                <i class="fa fa-heart-o"></i> Wishlist
+                                            </button>
+                                            <a href="shop.html" class="btn btn-info view-details-btn">
+                                                <i class="fa fa-eye"></i> View Full Details
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Quick View Modal -->
+
         <!-- Breadcrumb Area Start -->
         <div class="breadcrumb-area bg-12 text-center">
             <div class="container">
@@ -1963,12 +2021,12 @@
                                 <div class="col-lg-4 col-md-6 mb-40">
                                     <div class="product-card">
                                         <div class="product-image">
-                                            <img src="assets/img/product/1.jpg" alt="Baobab Renewal Serum" class="primary-img">
+                                            <img src="assets/img/icon/butter.jpg" alt="Baobab Renewal Serum" class="primary-img">
                                             <img src="assets/img/product/1-hover.jpg" alt="Baobab Renewal Serum" class="hover-img">
                                             
                                             <div class="product-badges">
                                                 <span class="badge best-seller">Best Seller</span>
-                                                <span class="badge vegan">Vegan</span>
+                                                <span class="badge vegan">Body Butters</span>
                                             </div>
                                             
                                             <div class="product-actions">
@@ -1981,8 +2039,8 @@
                                         </div>
                                         
                                         <div class="product-content">
-                                            <div class="product-category">Anti-Aging Serum</div>
-                                            <h3 class="product-title"><a href="product-details.html">Baobab Renewal Serum</a></h3>
+                                            <div class="product-category">Anti-Aging Serum</div
+                                            <h3 class="product-title"><a href="product-details.html">Body Butter</a></h3>
                                             <div class="product-rating">
                                                 <div class="stars">
                                                     <i class="fa fa-star"></i>
@@ -2008,8 +2066,8 @@
                                 <div class="col-lg-4 col-md-6 mb-40">
                                     <div class="product-card">
                                         <div class="product-image">
-                                            <img src="assets/img/product/2.jpg" alt="Marula Glow Moisturizer" class="primary-img">
-                                            <img src="assets/img/product/2-hover.jpg" alt="Marula Glow Moisturizer" class="hover-img">
+                                            <img src="assets/img/icon/herbal tea.jpg" alt="Marula Glow Moisturizer" class="primary-img">
+                                            <img src="assets/img/icon/herbal tea.jpg" alt="Marula Glow Moisturizer" class="hover-img">
                                             
                                             <div class="product-badges">
                                                 <span class="badge trending">Trending</span>
@@ -2026,7 +2084,7 @@
                                         
                                         <div class="product-content">
                                             <div class="product-category">Daily Moisturizer</div>
-                                            <h3 class="product-title"><a href="product-details.html">Marula Glow Moisturizer</a></h3>
+                                            <h3 class="product-title"><a href="product-details.html">Hearbal Tea</a></h3>
                                             <div class="product-rating">
                                                 <div class="stars">
                                                     <i class="fa fa-star"></i>
@@ -2051,7 +2109,7 @@
                                 <div class="col-lg-4 col-md-6 mb-40">
                                     <div class="product-card bundle-card">
                                         <div class="product-image">
-                                            <img src="assets/img/product/bundle-1.jpg" alt="Complete Skincare Bundle" class="primary-img">
+                                            <img src="assets/img/icon/tinkerers.jpg" alt="Complete Skincare Bundle" class="primary-img">
                                             
                                             <div class="product-badges">
                                                 <span class="badge bundle">Bundle Deal</span>
@@ -2068,7 +2126,7 @@
                                         
                                         <div class="product-content">
                                             <div class="product-category">Skincare Bundle</div>
-                                            <h3 class="product-title"><a href="product-details.html">Complete Morning Routine</a></h3>
+                                            <h3 class="product-title"><a href="product-details.html">Tinctures</a></h3>
                                             <div class="bundle-items">
                                                 <small>Cleanser + Serum + Moisturizer + SPF</small>
                                             </div>
@@ -2097,9 +2155,9 @@
                                 <div class="col-lg-4 col-md-6 mb-40">
                                     <div class="product-card">
                                         <div class="product-image">
-                                            <img src="assets/img/product/3.jpg" alt="Shea Butter Cleanser" class="primary-img">
-                                            <img src="assets/img/product/3-hover.jpg" alt="Shea Butter Cleanser" class="hover-img">
-                                            
+                                            <img src="assets/img/icon/bath bombs.jpg" alt="Bath Bombs" class="primary-img">
+                                            <img src="assets/img/icon/bath bombs.jpg" alt="Bath Bombs" class="hover-img">
+
                                             <div class="product-badges">
                                                 <span class="badge organic">Organic</span>
                                             </div>
@@ -2115,7 +2173,7 @@
                                         
                                         <div class="product-content">
                                             <div class="product-category">Gentle Cleanser</div>
-                                            <h3 class="product-title"><a href="product-details.html">Pure Shea Gentle Cleanser</a></h3>
+                                            <h3 class="product-title"><a href="product-details.html">Bath Bombs</a></h3>
                                             <div class="product-rating">
                                                 <div class="stars">
                                                     <i class="fa fa-star"></i>
@@ -2140,8 +2198,8 @@
                                 <div class="col-lg-4 col-md-6 mb-40">
                                     <div class="product-card">
                                         <div class="product-image">
-                                            <img src="assets/img/product/4.jpg" alt="Hibiscus Vitamin C Mask" class="primary-img">
-                                            <img src="assets/img/product/4-hover.jpg" alt="Hibiscus Vitamin C Mask" class="hover-img">
+                                            <img src="assets/img/icon/facemak (1).jpg" alt="Hibiscus Vitamin C Mask" class="primary-img">
+                                            <img src="assets/img/icon/facemak (1).jpg" alt="Hibiscus Vitamin C Mask" class="hover-img">
                                             
                                             <div class="product-badges">
                                                 <span class="badge new">New</span>
@@ -2184,8 +2242,8 @@
                                 <div class="col-lg-4 col-md-6 mb-40">
                                     <div class="product-card">
                                         <div class="product-image">
-                                            <img src="assets/img/product/5.jpg" alt="Moringa Eye Cream" class="primary-img">
-                                            <img src="assets/img/product/5-hover.jpg" alt="Moringa Eye Cream" class="hover-img">
+                                            <img src="assets/img/icon/facemak (2).jpg" alt="Moringa Eye Cream" class="primary-img">
+                                            <img src="assets/img/icon/facemak (2).jpg" alt="Moringa Eye Cream" class="hover-img">
                                             
                                             <div class="product-badges">
                                                 <span class="badge vegan">Vegan</span>
@@ -2227,8 +2285,8 @@
                                 <div class="col-lg-4 col-md-6 mb-40">
                                     <div class="product-card">
                                         <div class="product-image">
-                                            <img src="assets/img/product/6.jpg" alt="Aloe Soothing Toner" class="primary-img">
-                                            <img src="assets/img/product/6-hover.jpg" alt="Aloe Soothing Toner" class="hover-img">
+                                            <img src="assets/img/icon/alovera.png" alt="Aloe Soothing Toner" class="primary-img">
+                                            <img src="assets/img/icon/alovera.png" alt="Aloe Soothing Toner" class="hover-img">
                                             
                                             <div class="product-badges">
                                                 <span class="badge vegan">Vegan</span>
@@ -2271,8 +2329,8 @@
                                 <div class="col-lg-4 col-md-6 mb-40">
                                     <div class="product-card">
                                         <div class="product-image">
-                                            <img src="assets/img/product/7.jpg" alt="Mineral Sunscreen SPF 50" class="primary-img">
-                                            <img src="assets/img/product/7-hover.jpg" alt="Mineral Sunscreen SPF 50" class="hover-img">
+                                            <img src="assets/img/icon/sunscrren.png" alt="Mineral Sunscreen SPF 50" class="primary-img">
+                                            <img src="assets/img/icon/sunscrren.png" alt="Mineral Sunscreen SPF 50" class="hover-img">
                                             
                                             <div class="product-badges">
                                                 <span class="badge new">New</span>
@@ -2315,8 +2373,8 @@
                                 <div class="col-lg-4 col-md-6 mb-40">
                                     <div class="product-card">
                                         <div class="product-image">
-                                            <img src="assets/img/product/8.jpg" alt="Coffee Body Scrub" class="primary-img">
-                                            <img src="assets/img/product/8-hover.jpg" alt="Coffee Body Scrub" class="hover-img">
+                                            <img src="assets/img/icon/coco scrub.png" alt="Coffee Body Scrub" class="primary-img">
+                                            <img src="assets/img/icon/coco scrub.png" alt="Coffee Body Scrub" class="hover-img">
                                             
                                             <div class="product-badges">
                                                 <span class="badge trending">Trending</span>
@@ -2360,8 +2418,8 @@
                                 <div class="col-lg-4 col-md-6 mb-40">
                                     <div class="product-card">
                                         <div class="product-image">
-                                            <img src="assets/img/product/9.jpg" alt="Rooibos Night Serum" class="primary-img">
-                                            <img src="assets/img/product/9-hover.jpg" alt="Rooibos Night Serum" class="hover-img">
+                                            <img src="assets/img/icon/night serum.png" alt="Rooibos Night Serum" class="primary-img">
+                                            <img src="assets/img/icon/night serum.png" alt="Rooibos Night Serum" class="hover-img">
                                             
                                             <div class="product-badges">
                                                 <span class="badge best-seller">Best Seller</span>
@@ -2404,8 +2462,8 @@
                                 <div class="col-lg-4 col-md-6 mb-40">
                                     <div class="product-card">
                                         <div class="product-image">
-                                            <img src="assets/img/product/10.jpg" alt="Frankincense Face Oil" class="primary-img">
-                                            <img src="assets/img/product/10-hover.jpg" alt="Frankincense Face Oil" class="hover-img">
+                                            <img src="assets/img/icon/serum.png" alt="Frankincense Face Oil" class="primary-img">
+                                            <img src="assets/img/icon/serum.png" alt="Frankincense Face Oil" class="hover-img">
                                             
                                             <div class="product-badges">
                                                 <span class="badge organic">Organic</span>
@@ -2448,7 +2506,7 @@
                                 <div class="col-lg-4 col-md-6 mb-40">
                                     <div class="product-card bundle-card">
                                         <div class="product-image">
-                                            <img src="assets/img/product/bundle-2.jpg" alt="Evening Skincare Bundle" class="primary-img">
+                                            <img src="assets/img/icon/evening.png" alt="Evening Skincare Bundle" class="primary-img">
                                             
                                             <div class="product-badges">
                                                 <span class="badge bundle">Bundle Deal</span>
@@ -2521,7 +2579,7 @@
                             <h4>Quick Links</h4>
                             <ul class="footer-links">
                                 <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
-                                <li><a href="shop.html"><i class="fa fa-shopping-bag"></i> Shop Products</a></li>
+                                <li><a href="shop-full-width.html"><i class="fa fa-shopping-bag"></i> Shop Products</a></li>
                                 <li><a href="blog.html"><i class="fa fa-newspaper-o"></i> Our Blog</a></li>
                                 <li><a href="contact.html"><i class="fa fa-envelope"></i> Contact Us</a></li>
                                 <li><a href="my-account.html"><i class="fa fa-user"></i> My Account</a></li>
@@ -2532,11 +2590,11 @@
                         <div class="footer-section">
                             <h4>Categories</h4>
                             <ul class="footer-links">
-                                <li><a href="shop.html"><i class="fa fa-leaf"></i> Natural Skincare</a></li>
-                                <li><a href="shop.html"><i class="fa fa-heart"></i> Wellness Products</a></li>
-                                <li><a href="shop.html"><i class="fa fa-star"></i> Best Sellers</a></li>
-                                <li><a href="shop.html"><i class="fa fa-gift"></i> Gift Sets</a></li>
-                                <li><a href="shop.html"><i class="fa fa-tags"></i> Special Offers</a></li>
+                                <li><a href="shop-full-width.html"><i class="fa fa-leaf"></i> Natural Skincare</a></li>
+                                <li><a href="shop-full-width.html"><i class="fa fa-heart"></i> Wellness Products</a></li>
+                                <li><a href="shop-full-width.html"><i class="fa fa-star"></i> Best Sellers</a></li>
+                                <li><a href="shop-full-width.html"><i class="fa fa-gift"></i> Gift Sets</a></li>
+                                <li><a href="shop-full-width.html"><i class="fa fa-tags"></i> Special Offers</a></li>
                             </ul>
                         </div>
 
@@ -2562,7 +2620,7 @@
                                 </div>
                                 <div class="contact-item-footer">
                                     <i class="fa fa-phone"></i>
-                                    <span>+254 (712) 345-678</span>
+                                    <span>+254 (112) 462-664</span>
                                 </div>
                                 <div class="contact-item-footer">
                                     <i class="fa fa-envelope"></i>
@@ -2623,6 +2681,524 @@
         <script src="assets/js/plugins.js"></script>
         <script src="assets/js/ajax-mail.js"></script>
         <script src="assets/js/main.js"></script>
+        
+        <!-- Quick View Modal JavaScript -->
+        <script>
+        $(document).ready(function() {
+            // Add Quick View Modal Styles
+            $('<style>')
+                .prop('type', 'text/css')
+                .html(`
+                    /* Quick View Modal Styles */
+                    #quickViewModal .modal-dialog {
+                        max-width: 900px;
+                        margin: 30px auto;
+                    }
+                    
+                    #quickViewModal .modal-content {
+                        border-radius: 15px;
+                        border: none;
+                        box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+                    }
+                    
+                    #quickViewModal .modal-header {
+                        background: linear-gradient(45deg, #7fad39, #6a9230);
+                        color: white;
+                        border-radius: 15px 15px 0 0;
+                        padding: 20px 25px;
+                    }
+                    
+                    #quickViewModal .modal-title {
+                        font-weight: 700;
+                        font-size: 1.5rem;
+                    }
+                    
+                    #quickViewModal .close {
+                        color: white;
+                        opacity: 0.8;
+                        font-size: 2rem;
+                        font-weight: 300;
+                    }
+                    
+                    #quickViewModal .close:hover {
+                        opacity: 1;
+                        color: white;
+                    }
+                    
+                    #quickViewModal .modal-body {
+                        padding: 30px 25px;
+                    }
+                    
+                    .quick-view-image img {
+                        width: 100%;
+                        height: 350px;
+                        object-fit: cover;
+                        border-radius: 12px;
+                        box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+                    }
+                    
+                    .quick-view-details {
+                        padding-left: 25px;
+                    }
+                    
+                    .quick-view-details h3 {
+                        font-size: 1.8rem;
+                        font-weight: 700;
+                        color: #333;
+                        margin-bottom: 10px;
+                    }
+                    
+                    .product-tagline-modal {
+                        color: #7fad39;
+                        font-style: italic;
+                        margin-bottom: 20px;
+                        font-size: 1.05rem;
+                    }
+                    
+                    .quick-view-rating {
+                        display: flex;
+                        align-items: center;
+                        gap: 10px;
+                        margin-bottom: 20px;
+                    }
+                    
+                    .quick-view-rating .stars {
+                        display: flex;
+                        gap: 2px;
+                    }
+                    
+                    .quick-view-rating .stars .fa-star,
+                    .quick-view-rating .stars .fa-star-half-o {
+                        color: #ffc107;
+                        font-size: 16px;
+                    }
+                    
+                    .quick-view-rating .stars .fa-star-o {
+                        color: #ddd;
+                        font-size: 16px;
+                    }
+                    
+                    .rating-text-modal {
+                        font-weight: 600;
+                        color: #333;
+                        font-size: 0.9rem;
+                    }
+                    
+                    .quick-view-price {
+                        margin-bottom: 25px;
+                    }
+                    
+                    .current-price-modal {
+                        font-size: 1.8rem;
+                        font-weight: 700;
+                        color: #7fad39;
+                    }
+                    
+                    .original-price-modal {
+                        font-size: 1.2rem;
+                        color: #999;
+                        text-decoration: line-through;
+                        margin-left: 10px;
+                    }
+                    
+                    .savings-badge-modal {
+                        background: linear-gradient(45deg, #dc3545, #c82333);
+                        color: white;
+                        padding: 4px 10px;
+                        border-radius: 15px;
+                        font-size: 0.8rem;
+                        font-weight: 600;
+                        margin-left: 10px;
+                    }
+                    
+                    .quick-view-benefits {
+                        margin-bottom: 25px;
+                    }
+                    
+                    .quick-view-benefits h5 {
+                        color: #333;
+                        font-weight: 600;
+                        margin-bottom: 12px;
+                    }
+                    
+                    .benefits-list-modal {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                    }
+                    
+                    .benefits-list-modal li {
+                        padding: 6px 0;
+                        display: flex;
+                        align-items: center;
+                        gap: 8px;
+                        font-size: 0.95rem;
+                        color: #555;
+                    }
+                    
+                    .benefits-list-modal .fa-check-circle {
+                        color: #7fad39;
+                        font-size: 14px;
+                    }
+                    
+                    .quantity-selector-modal {
+                        margin-bottom: 20px;
+                    }
+                    
+                    .quantity-selector-modal label {
+                        font-weight: 600;
+                        color: #333;
+                        margin-bottom: 8px;
+                        display: block;
+                    }
+                    
+                    .qty-controls-modal {
+                        display: flex;
+                        align-items: center;
+                        border: 2px solid #e0e0e0;
+                        border-radius: 6px;
+                        overflow: hidden;
+                        width: fit-content;
+                    }
+                    
+                    .qty-btn-modal {
+                        background: #f8f9fa;
+                        border: none;
+                        width: 35px;
+                        height: 35px;
+                        cursor: pointer;
+                        font-weight: bold;
+                        font-size: 16px;
+                        transition: background 0.3s ease;
+                    }
+                    
+                    .qty-btn-modal:hover {
+                        background: #e0e0e0;
+                    }
+                    
+                    .qty-input-modal {
+                        border: none;
+                        width: 50px;
+                        height: 35px;
+                        text-align: center;
+                        font-weight: bold;
+                        font-size: 14px;
+                    }
+                    
+                    .modal-cta-buttons {
+                        display: flex;
+                        gap: 10px;
+                        flex-wrap: wrap;
+                    }
+                    
+                    .modal-cta-buttons .btn {
+                        padding: 12px 20px;
+                        border-radius: 6px;
+                        font-weight: 600;
+                        font-size: 0.9rem;
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 6px;
+                        border: none;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        text-decoration: none;
+                    }
+                    
+                    .modal-cta-buttons .btn-primary {
+                        background: linear-gradient(45deg, #7fad39, #6a9230);
+                        color: white;
+                    }
+                    
+                    .modal-cta-buttons .btn-primary:hover {
+                        transform: translateY(-2px);
+                        box-shadow: 0 6px 20px rgba(127, 173, 57, 0.3);
+                    }
+                    
+                    .modal-cta-buttons .btn-outline-secondary {
+                        background: transparent;
+                        border: 2px solid #6c757d;
+                        color: #6c757d;
+                    }
+                    
+                    .modal-cta-buttons .btn-outline-secondary:hover {
+                        background: #6c757d;
+                        color: white;
+                    }
+                    
+                    .modal-cta-buttons .btn-info {
+                        background: linear-gradient(45deg, #17a2b8, #138496);
+                        color: white;
+                    }
+                    
+                    .modal-cta-buttons .btn-info:hover {
+                        transform: translateY(-2px);
+                        box-shadow: 0 6px 20px rgba(23, 162, 184, 0.3);
+                    }
+                    
+                    .wishlist-btn-modal.active {
+                        border-color: #dc3545;
+                        color: #dc3545;
+                    }
+                    
+                    .wishlist-btn-modal.active:hover {
+                        background: #dc3545;
+                        color: white;
+                    }
+                    
+                    /* Responsive Design */
+                    @media (max-width: 768px) {
+                        #quickViewModal .modal-dialog {
+                            margin: 15px;
+                            max-width: none;
+                        }
+                        
+                        .quick-view-details {
+                            padding-left: 0;
+                            margin-top: 25px;
+                        }
+                        
+                        .quick-view-image img {
+                            height: 250px;
+                        }
+                        
+                        .modal-cta-buttons {
+                            flex-direction: column;
+                        }
+                        
+                        .modal-cta-buttons .btn {
+                            justify-content: center;
+                        }
+                    }
+                `)
+                .appendTo('head');
+
+            // Quick View Modal Functionality
+            $('.quick-view, .action-btn.quick-view').on('click', function(e) {
+                e.preventDefault();
+                
+                // Get product data from the clicked product card
+                var $productCard = $(this).closest('.product-card');
+                var productImage = $productCard.find('img').first().attr('src');
+                var productName = $productCard.find('h5 a, .product-title a').text().trim();
+                var productPrice = $productCard.find('.current-price').text().trim();
+                var originalPrice = $productCard.find('.original-price').text().trim();
+                
+                // If no product name found, try alternative selectors
+                if (!productName) {
+                    productName = $productCard.find('h5').text().trim() || $productCard.find('.product-name').text().trim();
+                }
+                
+                // Determine product type and get detailed data
+                var productData = getQuickViewData(productName, productImage);
+                
+                // Populate modal with product data
+                populateQuickViewModal(productData);
+                
+                // Show modal
+                $('#quickViewModal').modal('show');
+            });
+
+            // Function to get detailed product data for quick view
+            function getQuickViewData(productName, productImage) {
+                // Default product data structure
+                var defaultData = {
+                    name: productName || 'Natural Beauty Product',
+                    tagline: 'Premium quality natural skincare for healthy, glowing skin',
+                    image: productImage || 'assets/img/icon/serum.png',
+                    currentPrice: '$45.00',
+                    originalPrice: '$55.00',
+                    savings: 'Save 18%',
+                    rating: 4.5,
+                    benefits: [
+                        '100% natural and organic ingredients',
+                        'Suitable for all skin types',
+                        'Cruelty-free and eco-friendly',
+                        'Visible results in 14 days'
+                    ]
+                };
+
+                // Try to match with existing product data
+                if (productName.toLowerCase().includes('frankincense') || productName.toLowerCase().includes('face oil')) {
+                    return {
+                        name: 'Sacred Frankincense Face Oil',
+                        tagline: 'Precious frankincense from ancient Somali boswellia trees for timeless beauty',
+                        image: 'assets/img/icon/serum.png',
+                        currentPrice: '$68.00',
+                        originalPrice: '$85.00',
+                        savings: 'Save 20%',
+                        rating: 4.7,
+                        benefits: [
+                            'Reduces fine lines and wrinkles in 14 days',
+                            '100% organic and sustainably sourced',
+                            'Deeply nourishes and regenerates skin',
+                            'Suitable for all skin types including sensitive'
+                        ]
+                    };
+                } else if (productName.toLowerCase().includes('tincture') || productName.toLowerCase().includes('herbal')) {
+                    return {
+                        name: 'Herbal Healing Tincture',
+                        tagline: 'Concentrated botanical extracts for natural wellness and vitality',
+                        image: 'assets/img/icon/tinkerers.jpg',
+                        currentPrice: '$45.00',
+                        originalPrice: '$55.00',
+                        savings: 'Save 18%',
+                        rating: 4.5,
+                        benefits: [
+                            'Boosts natural immunity and energy',
+                            'Made from wildcrafted herbs',
+                            'Fast-absorbing liquid formula',
+                            'Supports overall wellness and vitality'
+                        ]
+                    };
+                } else if (productName.toLowerCase().includes('bath') || productName.toLowerCase().includes('lavender')) {
+                    return {
+                        name: 'Lavender Relaxation Bath Bomb',
+                        tagline: 'Luxurious aromatherapy bath experience with organic essential oils',
+                        image: 'assets/img/icon/bath bombs.jpg',
+                        currentPrice: '$24.00',
+                        originalPrice: '$28.00',
+                        savings: 'Save 14%',
+                        rating: 4.8,
+                        benefits: [
+                            'Deeply relaxing lavender aromatherapy',
+                            'Moisturizes and softens skin',
+                            'Natural ingredients, no harsh chemicals',
+                            'Perfect for stress relief and self-care'
+                        ]
+                    };
+                } else if (productName.toLowerCase().includes('body butter') || productName.toLowerCase().includes('shea')) {
+                    return {
+                        name: 'Organic Shea Body Butter',
+                        tagline: 'Rich, creamy body butter with pure African shea and botanical oils',
+                        image: 'assets/img/icon/butter.jpg',
+                        currentPrice: '$32.00',
+                        originalPrice: '$40.00',
+                        savings: 'Save 20%',
+                        rating: 4.9,
+                        benefits: [
+                            'Intense 24-hour moisture protection',
+                            'Fair-trade African shea butter',
+                            'Non-greasy, fast-absorbing formula',
+                            'Perfect for dry and sensitive skin'
+                        ]
+                    };
+                }
+
+                // Return default data if no match found
+                return defaultData;
+            }
+
+            // Function to populate the quick view modal
+            function populateQuickViewModal(productData) {
+                // Update modal content
+                $('#quickViewImg').attr('src', productData.image).attr('alt', productData.name);
+                $('#quickViewTitle').text(productData.name);
+                $('#quickViewTagline').text(productData.tagline);
+                $('#quickViewCurrentPrice').text(productData.currentPrice);
+                $('#quickViewOriginalPrice').text(productData.originalPrice);
+                $('#quickViewSavings').text(productData.savings);
+                $('#quickViewRating').text(productData.rating + ' out of 5 stars');
+
+                // Generate stars
+                var starsHtml = '';
+                var fullStars = Math.floor(productData.rating);
+                var hasHalfStar = productData.rating % 1 !== 0;
+                
+                for (var i = 0; i < fullStars; i++) {
+                    starsHtml += '<i class="fa fa-star"></i>';
+                }
+                if (hasHalfStar) {
+                    starsHtml += '<i class="fa fa-star-half-o"></i>';
+                }
+                for (var i = fullStars + (hasHalfStar ? 1 : 0); i < 5; i++) {
+                    starsHtml += '<i class="fa fa-star-o"></i>';
+                }
+                $('#quickViewStars').html(starsHtml);
+
+                // Populate benefits
+                var benefitsHtml = '';
+                productData.benefits.forEach(function(benefit) {
+                    benefitsHtml += '<li><i class="fa fa-check-circle"></i> ' + benefit + '</li>';
+                });
+                $('#quickViewBenefitsList').html(benefitsHtml);
+            }
+
+            // Modal quantity controls
+            $('.qty-btn-modal.plus').on('click', function() {
+                var input = $('.qty-input-modal');
+                var currentVal = parseInt(input.val());
+                var maxVal = parseInt(input.attr('max'));
+                if (currentVal < maxVal) {
+                    input.val(currentVal + 1);
+                }
+            });
+
+            $('.qty-btn-modal.minus').on('click', function() {
+                var input = $('.qty-input-modal');
+                var currentVal = parseInt(input.val());
+                var minVal = parseInt(input.attr('min'));
+                if (currentVal > minVal) {
+                    input.val(currentVal - 1);
+                }
+            });
+
+            // Modal add to cart
+            $('.add-to-cart-modal').on('click', function() {
+                var productName = $('#quickViewTitle').text();
+                var quantity = $('.qty-input-modal').val();
+                
+                $(this).html('<i class="fa fa-check"></i> Added!').addClass('btn-success');
+                setTimeout(() => {
+                    $(this).html('<i class="fa fa-shopping-cart"></i> Add to Cart').removeClass('btn-success');
+                }, 2000);
+                
+                showNotification(productName + ' (×' + quantity + ') added to cart!');
+                
+                // Close modal after adding to cart
+                setTimeout(() => {
+                    $('#quickViewModal').modal('hide');
+                }, 1500);
+            });
+
+            // Modal wishlist
+            $('.wishlist-btn-modal').on('click', function() {
+                var productName = $('#quickViewTitle').text();
+                $(this).toggleClass('active');
+                
+                if ($(this).hasClass('active')) {
+                    $(this).find('i').removeClass('fa-heart-o').addClass('fa-heart');
+                    showNotification(productName + ' added to wishlist!');
+                } else {
+                    $(this).find('i').removeClass('fa-heart').addClass('fa-heart-o');
+                    showNotification(productName + ' removed from wishlist');
+                }
+            });
+
+            // Notification function
+            function showNotification(message) {
+                // Remove existing notification
+                $('.shop-notification').remove();
+                
+                // Create new notification
+                var notification = $('<div class="shop-notification" style="position: fixed; top: 20px; right: 20px; background: linear-gradient(45deg, #7fad39, #6a9230); color: white; padding: 15px 20px; border-radius: 8px; box-shadow: 0 6px 20px rgba(0,0,0,0.15); z-index: 10000; font-weight: 600; opacity: 0; transition: all 0.3s ease;">' + message + '</div>');
+                $('body').append(notification);
+                
+                // Show notification
+                setTimeout(() => {
+                    notification.css('opacity', '1');
+                }, 100);
+                
+                // Hide notification
+                setTimeout(() => {
+                    notification.css('opacity', '0');
+                    setTimeout(() => {
+                        notification.remove();
+                    }, 300);
+                }, 3000);
+            }
+        });
+        </script>
         
         <!-- Shop Interactive Functionality -->
         <script>
@@ -2731,32 +3307,126 @@
                     skinConcern: [],
                     routineStep: [],
                     keyIngredient: [],
-                    specialFeatures: []
+                    specialFeatures: [],
+                    priceRange: parseFloat($('#price-range').val())
                 };
                 
-                // Collect active filters
+                // Collect active filters by section
                 $('.filter-group').each(function() {
-                    var groupName = $(this).find('h4').text().toLowerCase().replace(/\s+/g, '');
+                    var groupTitle = $(this).find('h4').text().toLowerCase().replace(/\s+/g, '');
                     $(this).find('input:checked').each(function() {
-                        activeFilters[groupName] = activeFilters[groupName] || [];
-                        activeFilters[groupName].push($(this).val());
+                        var filterValue = $(this).val();
+                        
+                        // Map filter sections to our activeFilters object
+                        if (groupTitle.includes('skin') || groupTitle.includes('concern')) {
+                            activeFilters.skinConcern.push(filterValue);
+                        } else if (groupTitle.includes('routine') || groupTitle.includes('step')) {
+                            activeFilters.routineStep.push(filterValue);
+                        } else if (groupTitle.includes('ingredient') || groupTitle.includes('key')) {
+                            activeFilters.keyIngredient.push(filterValue);
+                        } else if (groupTitle.includes('special') || groupTitle.includes('features')) {
+                            activeFilters.specialFeatures.push(filterValue);
+                        }
                     });
                 });
                 
-                // Show/hide products based on filters
+                var visibleCount = 0;
+                
+                // Filter products based on active filters
                 $('.product-card').each(function() {
+                    var $product = $(this);
                     var shouldShow = true;
-                    // Here you would implement actual filtering logic
-                    // For now, we'll just show all products
                     
+                    // Get product data
+                    var productTitle = $product.find('.product-title a').text().toLowerCase();
+                    var productCategory = $product.find('.product-category').text().toLowerCase();
+                    var productPrice = parseFloat($product.find('.current-price').text().replace('$', ''));
+                    var productBadges = [];
+                    $product.find('.badge').each(function() {
+                        productBadges.push($(this).text().toLowerCase());
+                    });
+                    
+                    // Check price range filter
+                    if (productPrice > activeFilters.priceRange) {
+                        shouldShow = false;
+                    }
+                    
+                    // Check skin concern filters
+                    if (activeFilters.skinConcern.length > 0) {
+                        var matchesConcern = activeFilters.skinConcern.some(concern => {
+                            return productTitle.includes(concern) || 
+                                   productCategory.includes(concern) ||
+                                   productBadges.some(badge => badge.includes(concern));
+                        });
+                        if (!matchesConcern) shouldShow = false;
+                    }
+                    
+                    // Check routine step filters
+                    if (activeFilters.routineStep.length > 0) {
+                        var matchesStep = activeFilters.routineStep.some(step => {
+                            return productTitle.includes(step) || 
+                                   productCategory.includes(step) ||
+                                   (step === 'moisturizer' && productCategory.includes('moisturizer')) ||
+                                   (step === 'cleanser' && productCategory.includes('cleanser')) ||
+                                   (step === 'serum' && productCategory.includes('serum')) ||
+                                   (step === 'toner' && productCategory.includes('toner')) ||
+                                   (step === 'sunscreen' && productCategory.includes('sun')) ||
+                                   (step === 'mask' && productCategory.includes('mask'));
+                        });
+                        if (!matchesStep) shouldShow = false;
+                    }
+                    
+                    // Check key ingredient filters
+                    if (activeFilters.keyIngredient.length > 0) {
+                        var matchesIngredient = activeFilters.keyIngredient.some(ingredient => {
+                            return productTitle.includes(ingredient) ||
+                                   (ingredient === 'baobab' && productTitle.includes('baobab')) ||
+                                   (ingredient === 'marula' && productTitle.includes('marula')) ||
+                                   (ingredient === 'shea' && productTitle.includes('shea')) ||
+                                   (ingredient === 'aloe' && productTitle.includes('aloe')) ||
+                                   (ingredient === 'hibiscus' && productTitle.includes('hibiscus')) ||
+                                   (ingredient === 'moringa' && productTitle.includes('moringa'));
+                        });
+                        if (!matchesIngredient) shouldShow = false;
+                    }
+                    
+                    // Check special features filters
+                    if (activeFilters.specialFeatures.length > 0) {
+                        var matchesFeature = activeFilters.specialFeatures.some(feature => {
+                            return productBadges.some(badge => 
+                                badge.includes(feature) || 
+                                (feature === 'vegan' && badge.includes('vegan')) ||
+                                (feature === 'fragrance-free' && badge.includes('fragrance-free')) ||
+                                (feature === 'organic' && badge.includes('organic')) ||
+                                (feature === 'new' && badge.includes('new'))
+                            );
+                        });
+                        if (!matchesFeature) shouldShow = false;
+                    }
+                    
+                    // Show or hide the product with animation
                     if (shouldShow) {
-                        $(this).parent().show();
+                        $product.parent().fadeIn(300);
+                        visibleCount++;
                     } else {
-                        $(this).parent().hide();
+                        $product.parent().fadeOut(300);
                     }
                 });
                 
-                updateResultsCount();
+                // Update results count
+                setTimeout(() => {
+                    updateResultsCount();
+                    
+                    // Show filter feedback
+                    var totalFilters = activeFilters.skinConcern.length + 
+                                     activeFilters.routineStep.length + 
+                                     activeFilters.keyIngredient.length + 
+                                     activeFilters.specialFeatures.length;
+                    
+                    if (totalFilters > 0 || activeFilters.priceRange < 75) {
+                        showNotification(`Showing ${visibleCount} products matching your filters`);
+                    }
+                }, 300);
             }
             
             function sortProducts(sortValue) {
@@ -2788,8 +3458,26 @@
             }
             
             function updateResultsCount() {
-                var visibleProducts = $('.product-card:visible').length;
-                $('.showing-results span').first().text('1-' + visibleProducts);
+                var visibleProducts = $('.product-card').parent(':visible').length;
+                var totalProducts = $('.product-card').length;
+                
+                // Update the showing results text
+                if (visibleProducts > 0) {
+                    $('.showing-results span').first().text('1-' + visibleProducts);
+                    $('.showing-results span').last().text(totalProducts);
+                } else {
+                    $('.showing-results').html('<p style="color: #999;">No products match your current filters</p>');
+                }
+                
+                // Update load more section
+                $('.load-info').text(`Showing ${visibleProducts} of ${totalProducts} products`);
+                
+                // Hide load more button if all products are visible
+                if (visibleProducts >= totalProducts) {
+                    $('.load-more-btn').hide();
+                } else {
+                    $('.load-more-btn').show();
+                }
             }
             
             function showNotification(message) {
@@ -2816,8 +3504,52 @@
         <!-- Additional CSS for interactive elements -->
         <style>
         .filter-active {
-            background-color: #f0f8e8;
+            background-color: #f0f8e8 !important;
             border-radius: 5px;
+            padding: 3px 8px;
+            border-left: 3px solid #78a206;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-list li {
+            transition: all 0.3s ease;
+            padding: 5px 0;
+            border-radius: 3px;
+        }
+        
+        .filter-list li:hover {
+            background-color: #f9f9f9;
+            padding-left: 5px;
+        }
+        
+        .filter-list label {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+        
+        .filter-list input[type="checkbox"] {
+            margin-right: 8px;
+            accent-color: #78a206;
+        }
+        
+        .clear-filters {
+            background: #ff4444;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+            width: 100%;
+        }
+        
+        .clear-filters:hover {
+            background: #cc3333;
+            transform: translateY(-1px);
         }
         
         .product-actions.show {
