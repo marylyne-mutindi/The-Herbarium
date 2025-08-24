@@ -1989,6 +1989,10 @@
                             <i class="fa fa-truck"></i>
                             Shipping Info
                         </button>
+                        <button class="quick-action-btn" data-message="Hi! I'm interested in The Herbarium's natural beauty products. Can you help me learn more?" style="background: linear-gradient(135deg, #25d366, #128c7e); color: white; border: none; font-weight: 600;">
+                            <i class="fa fa-whatsapp" style="color: white;"></i>
+                            Start WhatsApp Chat
+                        </button>
                     </div>
                 </div>
                 <div class="whatsapp-footer">
@@ -2000,7 +2004,7 @@
                     </div>
                 </div>
             </div>
-            <button class="whatsapp-btn" id="whatsapp-btn">
+            <button class="whatsapp-btn" id="whatsapp-btn" title="Click to open chat • Double-click for direct WhatsApp">
                 <i class="fa fa-whatsapp"></i>
                 <span class="notification-badge" id="notification-badge">1</span>
             </button>
@@ -2024,14 +2028,27 @@
             const sendCustomBtn = document.getElementById('send-custom-btn');
             const notificationBadge = document.getElementById('notification-badge');
 
-            // Toggle chat box
+            // Toggle chat box or open WhatsApp directly
+            let clickTimeout;
             whatsappBtn.addEventListener('click', function() {
-                whatsappChatBox.classList.toggle('active');
-                
-                // Hide notification badge when opened
-                if (whatsappChatBox.classList.contains('active')) {
-                    notificationBadge.style.display = 'none';
-                }
+                clearTimeout(clickTimeout);
+                clickTimeout = setTimeout(() => {
+                    // Single click - toggle chat box
+                    whatsappChatBox.classList.toggle('active');
+                    
+                    // Hide notification badge when opened
+                    if (whatsappChatBox.classList.contains('active')) {
+                        notificationBadge.style.display = 'none';
+                    }
+                }, 200);
+            });
+
+            // Double click on WhatsApp button to open directly
+            whatsappBtn.addEventListener('dblclick', function() {
+                clearTimeout(clickTimeout);
+                // Double click - open WhatsApp directly with default message
+                const defaultMessage = "Hi! I'm interested in The Herbarium's natural beauty products. Can you help me learn more?";
+                openWhatsApp(defaultMessage);
             });
 
             // Close chat box
@@ -2077,14 +2094,23 @@
             // Function to open WhatsApp with message
             function openWhatsApp(message) {
                 // Replace with your actual WhatsApp number (include country code without + sign)
-                const phoneNumber = '254112462664'; // Replace with your number
-                const encodedMessage = encodeURIComponent(message);
+                const phoneNumber = '254790576864'; // Replace with your number
+                
+                // Ensure message is properly encoded for URL
+                const cleanMessage = message.trim();
+                const encodedMessage = encodeURIComponent(cleanMessage);
+                
+                // Build WhatsApp URL with pre-filled message
                 const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                
+                // Debug: Log the URL to console (remove this in production)
+                console.log('WhatsApp URL:', whatsappUrl);
+                console.log('Original message:', cleanMessage);
                 
                 // Open in new tab/window
                 window.open(whatsappUrl, '_blank');
                 
-                // Close chat box after sending
+                // Close chat box after opening WhatsApp
                 whatsappChatBox.classList.remove('active');
             }
 
